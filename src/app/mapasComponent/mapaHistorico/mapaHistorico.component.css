@@ -1,0 +1,23 @@
+agm-map {
+	height: 35em;
+	width: 100%;
+}
+
+h2{
+	font-family: 'Droid Serif', serif;
+	font-weight: bold;
+}
+
+label{
+	font-family: 'Droid Serif', serif;
+}
+
+.form-group{
+	margin-top: 60px
+}
+
+.container{
+	margin-top: -20px; 
+	margin-bottom: 5px; 
+	width: 100%;
+}

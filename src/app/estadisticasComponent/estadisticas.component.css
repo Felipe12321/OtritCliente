@@ -1,0 +1,13 @@
+.my-content{
+  height: 88vh;
+}
+
+.sidenav{
+  height: 100%;
+  width: 20%;
+}
+
+h2{
+  font-family: "Droid Serif";
+  font-weight:  bold;
+}

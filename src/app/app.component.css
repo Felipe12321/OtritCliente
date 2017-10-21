@@ -1,0 +1,20 @@
+.navbar-default{background-color: white}
+
+.navbar-default .navbar-brand{font-size: 40px; font-family: 'Indie Flower'; color: #e30000; font-weight: bold;}
+
+.navbar-default .navbar-nav {
+	font-size: 20px;
+	font-family: 'Droid Serif', serif;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #e30000;
+    background: white;
+    font-weight: bold;
+}
+.navbar-default .navbar-nav a{
+	width: 180px;
+	text-align: center
+}
+	
