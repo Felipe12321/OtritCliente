@@ -21,8 +21,11 @@
                     [zoom]="zoom" 
                     [minZoom]="11"
                     [streetViewControl]="false">
-                    <agm-marker [latitude]="position.lat" [longitude]="position.lng" 
-                        *ngFor="let position of markers.position">
+                    <agm-marker 
+                        *ngFor="let m of markers; let i = index"
+                        [latitude]="m.lat"
+                        [longitude]="m.lng"
+                        [iconUrl]="m.icon">
                 </agm-marker>			  
             </agm-map>
         </div>
