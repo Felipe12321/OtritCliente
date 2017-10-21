@@ -32,9 +32,13 @@
 					[zoom]="zoom" 
 					[minZoom]="11"
 					[streetViewControl]="false">
-					<agm-marker [latitude]="position.lat" [longitude]="position.lng" 
-						*ngFor="let position of markers.position">
-					</agm-marker>			  
+					<agm-circle
+						*ngFor="let c of circles; let i = index"
+						[latitude]="c.lat"
+						[longitude]="c.lng"
+						[fillColor]="c.color"
+						[radius]="c.r">
+					</agm-circle>			  
 			</agm-map>
 		</div>
 	</div>

@@ -20,12 +20,12 @@ export class MapaTiempoRealComponent implements OnInit{
 	  @ViewChild('search')
 	  public searchElementRef: ElementRef;
   
-	markers: Object = {	'position' : [
-									  {'lat': -33.444398, 'lng': -70.590462},
-									  {'lat': -33.425204, 'lng': -70.534647},
-									  {'lat': -33.432323, 'lng': -70.750641},
-									  {'lat': -33.507726, 'lng': -70.674152}
-	]}
+	markers: Object = [
+									  {'lat': -33.444398, 'lng': -70.590462, 'icon': 'assets/traficon.png'},
+									  {'lat': -33.425204, 'lng': -70.534647, 'icon': 'assets/traficon.png'},
+									  {'lat': -33.432323, 'lng': -70.750641, 'icon': 'assets/traficon2.png'},
+									  {'lat': -33.507726, 'lng': -70.674152, 'icon': 'assets/traficon2.png'}
+	]
 	  constructor(
 		  private router: Router,
 		  private titleService: Title,

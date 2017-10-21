@@ -26,13 +26,14 @@ export class MapaHistoricoComponent implements OnInit{
 
 	@ViewChild('search')
 	public searchElementRef: ElementRef;
+	
+	circles: Object = [
+		{'lat': -33.444398, 'lng': -70.590462, 'color': '#0000FF' , 'r': 300},
+		{'lat': -33.425204, 'lng': -70.534647, 'color': '#0000FF', 'r': 500},
+		{'lat': -33.432323, 'lng': -70.750641, 'color': '#0000FF', 'r': 1000},
+		{'lat': -33.507726, 'lng': -70.674152, 'color': '#0000FF', 'r': 1500}
+]
 
-  markers: Object = {	'position' : [
-  	  							{'lat': -33.444398, 'lng': -70.590462},
-  	  							{'lat': -33.425204, 'lng': -70.534647},
-  	  							{'lat': -33.432323, 'lng': -70.750641},
-  	  							{'lat': -33.507726, 'lng': -70.674152}
-  ]}
 	constructor(
 		private router: Router,
 		private titleService: Title,

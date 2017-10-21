@@ -29,8 +29,18 @@ export class EstadisticasComponent implements OnInit{
 	 
 	  public chartHovered(e:any):void {
 		console.log(e);
-	  }
-	 
+		}
+		
+		ngOnInit() {
+			this.titleService.setTitle('Estadísticas - OTRIT');
+		}
+
+		constructor(
+			private router: Router,
+			private aR: ActivatedRoute,
+			private titleService: Title
+		){}
+
 	  public randomize():void {
 		// Only Change 3 values
 		let data = [
@@ -45,18 +55,6 @@ export class EstadisticasComponent implements OnInit{
 		clone[0].data = data;
 		this.barChartData = clone;
 
-	
-	constructor(
-		private router: Router,
-		private aR: ActivatedRoute,
-		private titleService: Title
-	){}
-
-
-	ngOnInit() {
-		this.titleService.setTitle('Estadísticas - OTRIT');
 	}
-
-
 	
 }
