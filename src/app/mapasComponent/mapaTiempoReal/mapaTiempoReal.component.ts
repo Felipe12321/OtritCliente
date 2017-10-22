@@ -4,6 +4,9 @@ import { Title } from '@angular/platform-browser';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
+import { Http} from '@angular/http';
+import { Accidente } from '../../model/accidente';
+import 'rxjs/add/operator/map';
 
 @Component({
 	selector: 'app-mapa-tiempo-real-component',
@@ -15,7 +18,8 @@ export class MapaTiempoRealComponent implements OnInit{
 	lat: number = -33.4669728;
 	lng: number = -70.6641528;
 	  public searchControl: FormControl;
-	  public zoom: number;
+		public zoom: number;
+		private accidentes: Accidente[];
   
 	  @ViewChild('search')
 	  public searchElementRef: ElementRef;
@@ -29,14 +33,27 @@ export class MapaTiempoRealComponent implements OnInit{
 	  constructor(
 		  private router: Router,
 		  private titleService: Title,
-		  private mapsAPILoader: MapsAPILoader,
+			private mapsAPILoader: MapsAPILoader,
+			private http: Http,
 		  private ngZone: NgZone
 	  ){}
   
 	  ngOnInit() {
+
+			this.titleService.setTitle('Mapa histórico - OTRIT');
+			
+
+
+			this.getAccidentes().subscribe(accidentes => {
+				
+				this.accidentes = accidentes as Accidente[];
+				console.log(this.accidentes);
+			});
+			
+			console.log(this.accidentes);
+
 		  this.zoom = 11;
   
-		  this.titleService.setTitle('Mapa histórico - OTRIT');
 		  this.searchControl = new FormControl();
   
 		  this.mapsAPILoader.load().then(() => {
@@ -60,6 +77,15 @@ export class MapaTiempoRealComponent implements OnInit{
 				  this.zoom = 15;
 				});
 			  });
-		  });
-	  }
+			});
+			
+			
+		}
+		
+
+		getAccidentes(){
+			return this.http.get('/assets/data/accidents.json').map((data) => {
+				return data['accidentes']}
+			);
+		}
 }

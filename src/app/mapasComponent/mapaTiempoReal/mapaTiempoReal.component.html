@@ -2,9 +2,6 @@
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
-                            
-    
-    
                 <label for="autocomplete">Buscar sector</label>
                 <input id="autocomplete" placeholder="Ingresa una dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
                 <br> <br>
@@ -15,17 +12,17 @@
             </div>
         <div class="col-md-9">
             <h2>Mapa en tiempo real</h2>
-                <agm-map 
-                    [latitude]="lat" 
-                    [longitude]="lng" 
-                    [zoom]="zoom" 
-                    [minZoom]="11"
-                    [streetViewControl]="false">
-                    <agm-marker 
-                        *ngFor="let m of markers; let i = index"
-                        [latitude]="m.lat"
-                        [longitude]="m.lng"
-                        [iconUrl]="m.icon">
+            <agm-map 
+                [latitude]="lat" 
+                [longitude]="lng" 
+                [zoom]="zoom" 
+                [minZoom]="11"
+                [streetViewControl]="false">
+                <agm-marker 
+                    *ngFor="let m of accidentes; let i = index"
+                    [latitude]="m.lat"
+                    [longitude]="m.lng"
+                    [iconUrl]="m.icon">
                 </agm-marker>			  
             </agm-map>
         </div>
