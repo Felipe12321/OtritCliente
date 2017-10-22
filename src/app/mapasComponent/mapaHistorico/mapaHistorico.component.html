@@ -1,3 +1,4 @@
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-3">
@@ -33,6 +34,7 @@
 					[minZoom]="11"
 					[streetViewControl]="false">
 					<agm-circle
+						
 						*ngFor="let c of circles; let i = index"
 						[latitude]="c.lat"
 						[longitude]="c.lng"
