@@ -36,14 +36,10 @@ export class MapaTiempoRealComponent implements OnInit{
 	  ){}
   
 	  ngOnInit() {
-
 			this.titleService.setTitle('Mapa histórico - OTRIT');
 			
-			this.markers = this.servicio.crearMarcadorTiempoReal();
-
-
+			
 			this.servicio.getAccidentes().subscribe(accidentes => {
-				
 				this.accidentes = accidentes as Accidente[];
 				console.log(this.accidentes);
 			});
@@ -51,8 +47,8 @@ export class MapaTiempoRealComponent implements OnInit{
 			console.log(this.accidentes);
 
 
+			this.markers = this.servicio.crearMarcadorTiempoReal();
 		  this.zoom = 11;
-  
 		  this.searchControl = new FormControl();
   
 		  this.mapsAPILoader.load().then(() => {

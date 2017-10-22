@@ -16,11 +16,16 @@ export class Servicios {
 		return ra;
     }
     
+
     public getAccidentes(){
         return this.http.get('/assets/data/accidents.json').map((data) => {
-            return data['accidentes']}
+            console.log(data.json());
+            return data.json();
+        }
         );
     }
+
+
 
     public crearMarcadoresHistorico(){
 		return [
