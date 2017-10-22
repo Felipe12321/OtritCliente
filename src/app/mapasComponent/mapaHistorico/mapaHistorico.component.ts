@@ -18,15 +18,10 @@ export class MapaHistoricoComponent implements OnInit{
 	public searchControl: FormControl;
 	public zoom: number;
 
-	//Aqui iria la funcion para determinar el radio
-	public getRadio(ra: number): number{
-		return ra;
-	}
-
 	foods = [
-    {value: '0', viewValue: '2017'},
-    {value: '1', viewValue: '2018'},
-    {value: '2', viewValue: '2019'}
+		{value: '0', viewValue: '2017'},
+		{value: '1', viewValue: '2018'},
+		{value: '2', viewValue: '2019'}
 	];
 
 	@ViewChild('search')
@@ -37,7 +32,13 @@ export class MapaHistoricoComponent implements OnInit{
 		{'lat': -33.425204, 'lng': -70.534647, 'color': '#0000FF', 'r': this.getRadio(2000)},
 		{'lat': -33.432323, 'lng': -70.750641, 'color': '#FF0000', 'r': this.getRadio(3000)},
 		{'lat': -33.507726, 'lng': -70.674152, 'color': '#FF0000', 'r': this.getRadio(4000)}
-	]
+	];
+
+	//Aqui iria la funcion para determinar el radio
+	public getRadio(ra: number): number{
+		return ra;
+	}
+
 
 	constructor(
 		private router: Router,
