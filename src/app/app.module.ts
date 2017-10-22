@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {HttpModule} from '@angular/http';
 import { AppRouting } from './app.routing';
 import { ChartsModule } from 'ng2-charts';
 
@@ -29,6 +29,7 @@ import { NgIf } from '@angular/common';
   imports: [
     BrowserModule,
     AppRouting,
+    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCHImk9BEYh0Z27DT8OD-6wx6cRYNJSpcY',
       libraries: ['places']

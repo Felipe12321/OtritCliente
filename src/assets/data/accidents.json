@@ -1,0 +1,244 @@
+{
+    "accidentes": [
+    {
+      "_id": "59ebdb579cd70dc3efb048df",
+      "calle": "177 Bowne Street",
+      "fecha": "2017-06-06",
+      "hora": "05:33:59",
+      "latitud": -33.484285,
+      "longitud": -73.522094
+    },
+    {
+      "_id": "59ebdb574d814eae08d68a5a",
+      "calle": "799 Lewis Place",
+      "fecha": "2017-09-23",
+      "hora": "06:58:43",
+      "latitud": -33.495662,
+      "longitud": -73.576391
+    },
+    {
+      "_id": "59ebdb575fe20fcdb012a0a6",
+      "calle": "164 Amersfort Place",
+      "fecha": "2017-03-31",
+      "hora": "08:00:03",
+      "latitud": -33.434963,
+      "longitud": -73.690924
+    },
+    {
+      "_id": "59ebdb57040bea2eec5402c6",
+      "calle": "122 Bush Street",
+      "fecha": "2017-06-13",
+      "hora": "08:09:26",
+      "latitud": -33.492601,
+      "longitud": -73.587088
+    },
+    {
+      "_id": "59ebdb5754c8de6b60ed03a2",
+      "calle": "584 Clermont Avenue",
+      "fecha": "2017-07-06",
+      "hora": "10:09:27",
+      "latitud": -33.476445,
+      "longitud": -73.605329
+    },
+    {
+      "_id": "59ebdb573f593317f5decb07",
+      "calle": "692 Monitor Street",
+      "fecha": "2017-08-11",
+      "hora": "06:21:56",
+      "latitud": -33.486422,
+      "longitud": -73.591217
+    },
+    {
+      "_id": "59ebdb57ffc8cdf55d22b090",
+      "calle": "896 Holly Street",
+      "fecha": "2017-05-17",
+      "hora": "06:21:54",
+      "latitud": -33.459829,
+      "longitud": -73.6071
+    },
+    {
+      "_id": "59ebdb5716b5da1ab46d66a2",
+      "calle": "392 Cox Place",
+      "fecha": "2017-09-24",
+      "hora": "10:38:26",
+      "latitud": -33.496892,
+      "longitud": -73.520181
+    },
+    {
+      "_id": "59ebdb57b071f21acbaa138a",
+      "calle": "810 Flatlands Avenue",
+      "fecha": "2017-06-29",
+      "hora": "08:21:01",
+      "latitud": -33.466198,
+      "longitud": -73.577013
+    },
+    {
+      "_id": "59ebdb57068093c34a644b6b",
+      "calle": "350 Jaffray Street",
+      "fecha": "2017-10-08",
+      "hora": "08:30:44",
+      "latitud": -33.461889,
+      "longitud": -73.674039
+    },
+    {
+      "_id": "59ebdb57a2c3b2bba0705dc9",
+      "calle": "946 Gerry Street",
+      "fecha": "2017-04-06",
+      "hora": "04:38:28",
+      "latitud": -33.494785,
+      "longitud": -73.625759
+    },
+    {
+      "_id": "59ebdb577e0c28001f75fd5e",
+      "calle": "348 Anthony Street",
+      "fecha": "2017-05-31",
+      "hora": "11:33:05",
+      "latitud": -33.454962,
+      "longitud": -73.578346
+    },
+    {
+      "_id": "59ebdb57a9067c9f7fb0d689",
+      "calle": "233 Argyle Road",
+      "fecha": "2017-09-09",
+      "hora": "10:36:40",
+      "latitud": -33.4878,
+      "longitud": -73.664446
+    },
+    {
+      "_id": "59ebdb579d5cc0eb33c061b1",
+      "calle": "799 Quay Street",
+      "fecha": "2017-03-18",
+      "hora": "11:10:57",
+      "latitud": -33.471837,
+      "longitud": -73.683709
+    },
+    {
+      "_id": "59ebdb57cfbf8e724039c19d",
+      "calle": "908 Ocean Court",
+      "fecha": "2017-04-07",
+      "hora": "09:30:46",
+      "latitud": -33.452361,
+      "longitud": -73.607505
+    },
+    {
+      "_id": "59ebdb575d6beadcd3b92499",
+      "calle": "437 Cass Place",
+      "fecha": "2017-02-20",
+      "hora": "04:02:00",
+      "latitud": -33.476021,
+      "longitud": -73.594113
+    },
+    {
+      "_id": "59ebdb573a0c3cff8bf71bb9",
+      "calle": "667 Fair Street",
+      "fecha": "2017-06-10",
+      "hora": "07:45:30",
+      "latitud": -33.443275,
+      "longitud": -73.566008
+    },
+    {
+      "_id": "59ebdb57aebfb949935a2bdc",
+      "calle": "533 Butler Place",
+      "fecha": "2017-10-09",
+      "hora": "09:03:34",
+      "latitud": -33.459585,
+      "longitud": -73.671354
+    },
+    {
+      "_id": "59ebdb578aa5b81677ae952c",
+      "calle": "315 Varick Avenue",
+      "fecha": "2017-02-15",
+      "hora": "05:07:26",
+      "latitud": -33.455192,
+      "longitud": -73.633662
+    },
+    {
+      "_id": "59ebdb57cced2ba18dfc84e3",
+      "calle": "322 Turnbull Avenue",
+      "fecha": "2017-02-23",
+      "hora": "06:27:42",
+      "latitud": -33.455895,
+      "longitud": -73.668774
+    },
+    {
+      "_id": "59ebdb579f5037cd4f8e0496",
+      "calle": "302 Morton Street",
+      "fecha": "2017-06-03",
+      "hora": "08:03:32",
+      "latitud": -33.471802,
+      "longitud": -73.561157
+    },
+    {
+      "_id": "59ebdb57d8131b10ca9043d7",
+      "calle": "740 Crystal Street",
+      "fecha": "2017-04-19",
+      "hora": "03:41:16",
+      "latitud": -33.451469,
+      "longitud": -73.678952
+    },
+    {
+      "_id": "59ebdb5776d44059a77874c7",
+      "calle": "776 Keap Street",
+      "fecha": "2017-04-07",
+      "hora": "06:20:40",
+      "latitud": -33.430228,
+      "longitud": -73.514495
+    },
+    {
+      "_id": "59ebdb57c658240999a72f03",
+      "calle": "817 Fleet Walk",
+      "fecha": "2017-01-30",
+      "hora": "04:27:33",
+      "latitud": -33.468145,
+      "longitud": -73.6545
+    },
+    {
+      "_id": "59ebdb5777b6c2dd711e0f39",
+      "calle": "772 Whitty Lane",
+      "fecha": "2017-09-22",
+      "hora": "11:46:20",
+      "latitud": -33.495614,
+      "longitud": -73.652684
+    },
+    {
+      "_id": "59ebdb577d513a4f93d31779",
+      "calle": "483 Alabama Avenue",
+      "fecha": "2017-07-13",
+      "hora": "07:58:22",
+      "latitud": -33.479613,
+      "longitud": -73.647711
+    },
+    {
+      "_id": "59ebdb57d7a36b2db71ea313",
+      "calle": "679 Strickland Avenue",
+      "fecha": "2017-04-16",
+      "hora": "09:51:29",
+      "latitud": -33.459113,
+      "longitud": -73.630002
+    },
+    {
+      "_id": "59ebdb57f1ff986911746433",
+      "calle": "291 Woodbine Street",
+      "fecha": "2017-03-25",
+      "hora": "11:54:24",
+      "latitud": -33.481967,
+      "longitud": -73.546924
+    },
+    {
+      "_id": "59ebdb578694940925697988",
+      "calle": "278 Atkins Avenue",
+      "fecha": "2017-09-22",
+      "hora": "08:20:03",
+      "latitud": -33.433274,
+      "longitud": -73.588384
+    },
+    {
+      "_id": "59ebdb5731927468b0330730",
+      "calle": "922 Louisiana Avenue",
+      "fecha": "2017-05-20",
+      "hora": "03:03:23",
+      "latitud": -33.441368,
+      "longitud": -73.638588
+    }
+  ]
+}
