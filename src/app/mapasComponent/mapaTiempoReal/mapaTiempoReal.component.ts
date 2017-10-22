@@ -4,9 +4,10 @@ import { Title } from '@angular/platform-browser';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
-import { Http} from '@angular/http';
+
 import { Accidente } from '../../model/accidente';
-import 'rxjs/add/operator/map';
+
+import { Servicios } from '../../services/services';
 
 @Component({
 	selector: 'app-mapa-tiempo-real-component',
@@ -15,42 +16,43 @@ import 'rxjs/add/operator/map';
 })
 
 export class MapaTiempoRealComponent implements OnInit{
-	lat: number = -33.4669728;
-	lng: number = -70.6641528;
-	  public searchControl: FormControl;
-		public zoom: number;
-		private accidentes: Accidente[];
+	private lat: number = -33.4669728;
+	private lng: number = -70.6641528;
+	public searchControl: FormControl;
+	public zoom: number;
+	private accidentes: Accidente[];
   
-	  @ViewChild('search')
-	  public searchElementRef: ElementRef;
+	@ViewChild('search')
+	public searchElementRef: ElementRef;
   
-	markers: Object = [
-									  {'lat': -33.444398, 'lng': -70.590462, 'icon': 'assets/traficon.png'},
-									  {'lat': -33.425204, 'lng': -70.534647, 'icon': 'assets/traficon.png'},
-									  {'lat': -33.432323, 'lng': -70.750641, 'icon': 'assets/traficon.png'},
-									  {'lat': -33.507726, 'lng': -70.674152, 'icon': 'assets/traficon.png'}
-	]
+	markers: Object;
+
 	  constructor(
 		  private router: Router,
 		  private titleService: Title,
 			private mapsAPILoader: MapsAPILoader,
-			private http: Http,
-		  private ngZone: NgZone
+			private ngZone: NgZone,
+			private servicio: Servicios
 	  ){}
   
 	  ngOnInit() {
 
 			this.titleService.setTitle('Mapa histórico - OTRIT');
 			
+			this.crearMarcador();
 
 
-			this.getAccidentes().subscribe(accidentes => {
+			this.servicio.getAccidentes().subscribe(accidentes => {
 				
 				this.accidentes = accidentes as Accidente[];
 				console.log(this.accidentes);
 			});
 			
 			console.log(this.accidentes);
+
+
+			this.servicio.loadMap();
+
 
 		  this.zoom = 11;
   
@@ -83,9 +85,12 @@ export class MapaTiempoRealComponent implements OnInit{
 		}
 		
 
-		getAccidentes(){
-			return this.http.get('/assets/data/accidents.json').map((data) => {
-				return data['accidentes']}
-			);
+		private crearMarcador(){
+			this.markers = [
+				{'lat': -33.444398, 'lng': -70.590462, 'icon': 'assets/traficon.png'},
+				{'lat': -33.425204, 'lng': -70.534647, 'icon': 'assets/traficon.png'},
+				{'lat': -33.432323, 'lng': -70.750641, 'icon': 'assets/traficon.png'},
+				{'lat': -33.507726, 'lng': -70.674152, 'icon': 'assets/traficon.png'}
+			]
 		}
 }

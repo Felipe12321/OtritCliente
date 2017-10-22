@@ -5,6 +5,8 @@ import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
 
+import { Servicios } from '../../services/services';
+
 @Component({
 	selector: 'app-mapa-historico-component',
 	templateUrl: './mapaHistorico.component.html',
@@ -13,12 +15,13 @@ import { } from 'googlemaps';
 })
 
 export class MapaHistoricoComponent implements OnInit{
-	lat: number = -33.4669728;
-  lng: number = -70.6641528;
+	private lat: number = -33.4669728;
+  private lng: number = -70.6641528;
 	public searchControl: FormControl;
 	public zoom: number;
+	private circles: Object;
 
-	foods = [
+	years = [
 		{value: '0', viewValue: '2017'},
 		{value: '1', viewValue: '2018'},
 		{value: '2', viewValue: '2019'}
@@ -27,17 +30,9 @@ export class MapaHistoricoComponent implements OnInit{
 	@ViewChild('search')
 	public searchElementRef: ElementRef;
 	
-	circles: Object = [
-		{'lat': -33.444398, 'lng': -70.590462, 'color': '#0000FF' , 'r': this.getRadio(1000)},
-		{'lat': -33.425204, 'lng': -70.534647, 'color': '#0000FF', 'r': this.getRadio(2000)},
-		{'lat': -33.432323, 'lng': -70.750641, 'color': '#FF0000', 'r': this.getRadio(3000)},
-		{'lat': -33.507726, 'lng': -70.674152, 'color': '#FF0000', 'r': this.getRadio(4000)}
-	];
+	
 
-	//Aqui iria la funcion para determinar el radio
-	public getRadio(ra: number): number{
-		return ra;
-	}
+	
 
 
 	constructor(
@@ -45,14 +40,16 @@ export class MapaHistoricoComponent implements OnInit{
 		private titleService: Title,
 		private mapsAPILoader: MapsAPILoader,
 		private ngZone: NgZone,
+		private servicio: Servicios
 		
 	){}
 
 	ngOnInit() {
-		
+		this.titleService.setTitle('Mapa histórico - OTRIT');		
+		this.crearMarcadores();
+
 		this.zoom = 11;
 
-		this.titleService.setTitle('Mapa histórico - OTRIT');
 		this.searchControl = new FormControl();
 
 		this.mapsAPILoader.load().then(() => {
@@ -77,6 +74,15 @@ export class MapaHistoricoComponent implements OnInit{
 			  });
 			});
 		});
+	}
+
+	crearMarcadores(){
+		this.circles = [
+			{'lat': -33.444398, 'lng': -70.590462, 'color': '#0000FF' , 'r': this.servicio.getRadio(1000)},
+			{'lat': -33.425204, 'lng': -70.534647, 'color': '#0000FF', 'r': this.servicio.getRadio(2000)},
+			{'lat': -33.432323, 'lng': -70.750641, 'color': '#FF0000', 'r': this.servicio.getRadio(3000)},
+			{'lat': -33.507726, 'lng': -70.674152, 'color': '#FF0000', 'r': this.servicio.getRadio(4000)}
+		];
 	}
 
 }

@@ -3,22 +3,19 @@
 	<div class="row">
 		<div class="col-md-3">
 				<div class="form-group">
-						
-					<form>
-					
 
-							<!--Input-->
-							<label for="">Buscar sector</label>
-							<input id="autocomplete" placeholder="Ingresa una dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" style="width: 100%">
-							<br> <br>
-	
-							<label>seleccionar fecha</label>
+					<form>
+						<!--Input-->
+						<label for="">Buscar sector</label>
+						<input id="autocomplete" placeholder="Ingresa una dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" style="width: 100%">
+						<br> <br>
+						<label>seleccionar fecha</label>
 						<mat-form-field>
 							
 							
-							<mat-select placeholder="Año">
-								<mat-option *ngFor="let food of foods" [value]="food.value">{{ food.viewValue }}</mat-option>
-							</mat-select>
+						<mat-select placeholder="Año">
+							<mat-option *ngFor="let year of years" [value]="year.value">{{ year.viewValue }}</mat-option>
+						</mat-select>
 
 
 					  </mat-form-field>
