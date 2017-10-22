@@ -20,7 +20,7 @@ export class MapaTiempoRealComponent implements OnInit{
 	private lng: number = -70.6641528;
 	public searchControl: FormControl;
 	public zoom: number;
-	private accidentes: Accidente[];
+	private accidentes: Accidente[] = [];
   
 	@ViewChild('search')
 	public searchElementRef: ElementRef;
@@ -47,7 +47,7 @@ export class MapaTiempoRealComponent implements OnInit{
 			console.log(this.accidentes);
 
 
-			this.markers = this.servicio.crearMarcadorTiempoReal();
+			
 		  this.zoom = 11;
 		  this.searchControl = new FormControl();
   
@@ -57,13 +57,13 @@ export class MapaTiempoRealComponent implements OnInit{
 				componentRestrictions: {country: 'cl'}
 			  });
 			  autocomplete.addListener('place_changed', () => {
-				this.ngZone.run(() => {
+					this.ngZone.run(() => {
 				  // get the place result
-				  let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-		  
-				  // verify result
-				  if (place.geometry === undefined || place.geometry === null) {
-					return;
+						let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+				
+						// verify result
+						if (place.geometry === undefined || place.geometry === null) {
+						return;
 				  }
 				  
 				  // set latitude, longitude and zoom

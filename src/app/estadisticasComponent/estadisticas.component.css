@@ -1,13 +1,18 @@
-.my-content{
-  height: 88vh;
-}
-
-.sidenav{
-  height: 100%;
-  width: 20%;
-}
-
 h2{
-  font-family: "Droid Serif";
-  font-weight:  bold;
+	font-family: 'Droid Serif', serif;
+	font-weight: bold;
+}
+
+label{
+	font-family: 'Droid Serif', serif;
+}
+
+.form-group{
+	margin-top: 60px
+}
+
+.container{
+	margin-top: -20px; 
+	margin-bottom: 5px; 
+	width: 100%;
 }

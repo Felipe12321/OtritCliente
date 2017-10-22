@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import { AppRouting } from './app.routing';
 import { ChartsModule } from 'ng2-charts';
+import { DatePipe } from '@angular/common';
 
 import { Servicios } from './services/services';
 
@@ -40,9 +41,10 @@ import { NgIf } from '@angular/common';
     ReactiveFormsModule,
     MatSelectModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
   ],
-  providers: [Servicios],
+  providers: [Servicios, DatePipe],
   bootstrap: [ AppComponent
   ]
 })
