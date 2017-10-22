@@ -30,11 +30,6 @@ export class MapaHistoricoComponent implements OnInit{
 	@ViewChild('search')
 	public searchElementRef: ElementRef;
 	
-	
-
-	
-
-
 	constructor(
 		private router: Router,
 		private titleService: Title,
@@ -46,7 +41,7 @@ export class MapaHistoricoComponent implements OnInit{
 
 	ngOnInit() {
 		this.titleService.setTitle('Mapa histórico - OTRIT');		
-		this.crearMarcadores();
+		this.circles = this.servicio.crearMarcadoresHistorico();
 
 		this.zoom = 11;
 
@@ -76,14 +71,7 @@ export class MapaHistoricoComponent implements OnInit{
 		});
 	}
 
-	crearMarcadores(){
-		this.circles = [
-			{'lat': -33.444398, 'lng': -70.590462, 'color': '#0000FF' , 'r': this.servicio.getRadio(1000)},
-			{'lat': -33.425204, 'lng': -70.534647, 'color': '#0000FF', 'r': this.servicio.getRadio(2000)},
-			{'lat': -33.432323, 'lng': -70.750641, 'color': '#FF0000', 'r': this.servicio.getRadio(3000)},
-			{'lat': -33.507726, 'lng': -70.674152, 'color': '#FF0000', 'r': this.servicio.getRadio(4000)}
-		];
-	}
+	
 
 }
 

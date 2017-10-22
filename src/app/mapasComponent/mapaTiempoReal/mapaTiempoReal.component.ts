@@ -39,7 +39,7 @@ export class MapaTiempoRealComponent implements OnInit{
 
 			this.titleService.setTitle('Mapa histórico - OTRIT');
 			
-			this.crearMarcador();
+			this.markers = this.servicio.crearMarcadorTiempoReal();
 
 
 			this.servicio.getAccidentes().subscribe(accidentes => {
@@ -49,9 +49,6 @@ export class MapaTiempoRealComponent implements OnInit{
 			});
 			
 			console.log(this.accidentes);
-
-
-			this.servicio.loadMap();
 
 
 		  this.zoom = 11;
@@ -84,13 +81,4 @@ export class MapaTiempoRealComponent implements OnInit{
 			
 		}
 		
-
-		private crearMarcador(){
-			this.markers = [
-				{'lat': -33.444398, 'lng': -70.590462, 'icon': 'assets/traficon.png'},
-				{'lat': -33.425204, 'lng': -70.534647, 'icon': 'assets/traficon.png'},
-				{'lat': -33.432323, 'lng': -70.750641, 'icon': 'assets/traficon.png'},
-				{'lat': -33.507726, 'lng': -70.674152, 'icon': 'assets/traficon.png'}
-			]
-		}
 }
