@@ -6,6 +6,7 @@ import {HttpModule} from '@angular/http';
 import { AppRouting } from './app.routing';
 import { ChartsModule } from 'ng2-charts';
 
+import { Servicios } from './services/services';
 
 import { AppComponent } from './app.component';
 import { EstadisticasComponent} from './estadisticasComponent/estadisticas.component';
@@ -41,7 +42,7 @@ import { NgIf } from '@angular/common';
     MatInputModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [Servicios],
   bootstrap: [ AppComponent
   ]
 })
