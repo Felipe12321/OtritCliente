@@ -8,7 +8,8 @@ import { } from 'googlemaps';
 @Component({
 	selector: 'app-mapa-historico-component',
 	templateUrl: './mapaHistorico.component.html',
-  styleUrls: ['./mapaHistorico.component.css']
+	styleUrls: ['./mapaHistorico.component.css'],
+
 })
 
 export class MapaHistoricoComponent implements OnInit{
@@ -17,31 +18,37 @@ export class MapaHistoricoComponent implements OnInit{
 	public searchControl: FormControl;
 	public zoom: number;
 
+	//Aqui iria la funcion para determinar el radio
+	public getRadio(ra: number): number{
+		return ra;
+	}
+
 	foods = [
     {value: '0', viewValue: '2017'},
     {value: '1', viewValue: '2018'},
     {value: '2', viewValue: '2019'}
-  ];
-
+	];
 
 	@ViewChild('search')
 	public searchElementRef: ElementRef;
 	
 	circles: Object = [
-		{'lat': -33.444398, 'lng': -70.590462, 'color': '#0000FF' , 'r': 300},
-		{'lat': -33.425204, 'lng': -70.534647, 'color': '#0000FF', 'r': 500},
-		{'lat': -33.432323, 'lng': -70.750641, 'color': '#0000FF', 'r': 1000},
-		{'lat': -33.507726, 'lng': -70.674152, 'color': '#0000FF', 'r': 1500}
-]
+		{'lat': -33.444398, 'lng': -70.590462, 'color': '#0000FF' , 'r': this.getRadio(1000)},
+		{'lat': -33.425204, 'lng': -70.534647, 'color': '#0000FF', 'r': this.getRadio(2000)},
+		{'lat': -33.432323, 'lng': -70.750641, 'color': '#FF0000', 'r': this.getRadio(3000)},
+		{'lat': -33.507726, 'lng': -70.674152, 'color': '#FF0000', 'r': this.getRadio(4000)}
+	]
 
 	constructor(
 		private router: Router,
 		private titleService: Title,
 		private mapsAPILoader: MapsAPILoader,
-		private ngZone: NgZone
+		private ngZone: NgZone,
+		
 	){}
 
 	ngOnInit() {
+		
 		this.zoom = 11;
 
 		this.titleService.setTitle('Mapa histórico - OTRIT');
@@ -70,6 +77,6 @@ export class MapaHistoricoComponent implements OnInit{
 			});
 		});
 	}
-	  
-	  
+
 }
+

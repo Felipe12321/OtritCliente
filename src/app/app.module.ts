@@ -16,6 +16,8 @@ import { HomeComponent } from './homeComponent/home.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule, MatInputModule} from '@angular/material';
 
+import { NgIf } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
