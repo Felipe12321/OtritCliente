@@ -17,11 +17,11 @@
                 [minZoom]="11"
                 [streetViewControl]="false">
                 <agm-marker 
-                    *ngFor="let m of accidentes; let i = index"
-                    [latitude]="m.lat"
-                    [longitude]="m.lng"
-                    [iconUrl]="m.icon">
-                </agm-marker>			  
+                    *ngFor="let acc of accidentes; let i = index"
+                    [latitude]="acc.latitud"
+                    [longitude]="acc.longitud"
+                    [iconUrl]="'assets/traficon.png'">
+                </agm-marker>
             </agm-map>
         </div>
     </div>
