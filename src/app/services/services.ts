@@ -4,11 +4,15 @@ import { Http} from '@angular/http';
 import { Accidente } from '../model/accidente';
 
 import 'rxjs/add/operator/map';
+import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class Servicios {
-    
-    constructor(private http: Http){}
+    fecha: Date[] = [];
+
+
+    constructor(private http: Http,
+        private datePipe: DatePipe){}
     
 
     // Aqui iria la funcion para determinar el radio
@@ -35,13 +39,16 @@ export class Servicios {
 			{'lat': -33.507726, 'lng': -70.674152, 'color': '#FF0000', 'r': this.getRadio(4000)}
 		];
     }
-    
-    public crearMarcadorTiempoReal(){
-        return [
-            {'lat': -33.444398, 'lng': -70.590462, 'icon': 'assets/traficon.png'},
-            {'lat': -33.425204, 'lng': -70.534647, 'icon': 'assets/traficon.png'},
-            {'lat': -33.432323, 'lng': -70.750641, 'icon': 'assets/traficon.png'},
-            {'lat': -33.507726, 'lng': -70.674152, 'icon': 'assets/traficon.png'}
-        ]
+
+    public getDate(accidentes: Accidente[]){
+        
+        for (let accidente of accidentes){
+            let full = accidente['fecha'] +' '+ accidente['hora'];
+            let date = (this.datePipe.transform(full, 'MM-dd-yyyy hh:mm:ss'));
+            let newDate = (new Date(date));
+            this.fecha.push(new Date(newDate));
+        }
+        console.log(this.fecha);
+        return this.fecha;
     }
 }
