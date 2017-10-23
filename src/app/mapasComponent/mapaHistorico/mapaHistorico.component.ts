@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
-
+import { Accidente2 } from '../../model/accidente2';
 import { Servicios } from '../../services/services';
 
 @Component({
@@ -20,6 +20,8 @@ export class MapaHistoricoComponent implements OnInit{
 	public searchControl: FormControl;
 	public zoom: number;
 	private circles: Object;
+	private accidentes2: Accidente2[];
+	
 
 	years = [
 		{value: '0', viewValue: '2017'},
@@ -42,6 +44,15 @@ export class MapaHistoricoComponent implements OnInit{
 	ngOnInit() {
 		this.titleService.setTitle('Mapa histórico - OTRIT');		
 		this.circles = this.servicio.crearMarcadoresHistorico();
+		
+		
+		this.servicio.getAccidentes2().subscribe(accidentes2 => {
+			this.accidentes2 = accidentes2 as Accidente2[];
+			console.log(this.accidentes2);
+		});
+
+		console.log(this.accidentes2);
+
 
 		this.zoom = 11;
 

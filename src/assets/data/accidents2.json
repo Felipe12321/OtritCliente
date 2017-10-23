@@ -1,0 +1,205 @@
+[
+{
+"_id": "59ebdb579cd70dc3efb048df",
+"calle": "177 Bowne Street",
+"fecha": "2017-06-06",
+"hora": "05:33:59",
+"latitud": -33.484285,
+"longitud": -70.522094,
+"repetidas": 10
+
+    },
+{
+"_id": "59ebdb574d814eae08d68a5a",
+"calle": "799 Lewis Place",
+"fecha": "2017-09-23",
+"hora": "06:58:43",
+"latitud": -33.495662,
+"longitud": -70.576391,
+"repetidas": 5
+
+    },
+{
+"_id": "59ebdb575fe20fcdb012a0a6",
+"calle": "164 Amersfort Place",
+"fecha": "2017-03-31",
+"hora": "08:00:03",
+"latitud": -33.434963,
+"longitud": -70.690924,
+"repetidas": 1
+
+    },
+{
+"_id": "59ebdb57040bea2eec5402c6",
+"calle": "122 Bush Street",
+"fecha": "2017-06-13",
+"hora": "08:09:26",
+"latitud": -33.492601,
+"longitud": -70.587088,
+"repetidas": 3
+
+    },
+{
+"_id": "59ebdb5754c8de6b60ed03a2",
+"calle": "584 Clermont Avenue",
+"fecha": "2017-07-06",
+"hora": "10:09:27",
+"latitud": -33.476445,
+"longitud": -70.605329,
+"repetidas": 6
+
+    },
+{
+"_id": "59ebdb570f593317f5decb07",
+"calle": "692 Monitor Street",
+"fecha": "2017-08-11",
+"hora": "06:21:56",
+"latitud": -33.486422,
+"longitud": -70.591217,
+"repetidas": 2
+
+
+    },
+{
+"_id": "59ebdb57ffc8cdf55d22b090",
+"calle": "896 Holly Street",
+"fecha": "2017-05-17",
+"hora": "06:21:54",
+"latitud": -33.459829,
+"longitud": -70.6071,
+"repetidas": 1
+
+
+    },
+{
+"_id": "59ebdb5716b5da1ab46d66a2",
+"calle": "392 Cox Place",
+"fecha": "2017-09-24",
+"hora": "10:38:26",
+"latitud": -33.496892,
+"longitud": -70.520181,
+"repetidas": 20
+
+    },
+{
+"_id": "59ebdb57b071f21acbaa138a",
+"calle": "810 Flatlands Avenue",
+"fecha": "2017-06-29",
+"hora": "08:21:01",
+"latitud": -33.466198,
+"longitud": -70.577013,
+"repetidas": 6
+
+    },
+{
+"_id": "59ebdb57068093c34a644b6b",
+"calle": "350 Jaffray Street",
+"fecha": "2017-10-08",
+"hora": "08:30:44",
+"latitud": -33.461889,
+"longitud": -70.674039,
+"repetidas": 1
+
+    },
+{
+"_id": "59ebdb57a2c3b2bba0705dc9",
+"calle": "946 Gerry Street",
+"fecha": "2017-04-06",
+"hora": "04:38:28",
+"latitud": -33.494785,
+"longitud": -70.625759,
+"repetidas": 15
+
+    },
+{
+"_id": "59ebdb577e0c28001f75fd5e",
+"calle": "348 Anthony Street",
+"fecha": "2017-05-31",
+"hora": "11:33:05",
+"latitud": -33.454962,
+"longitud": -70.578346,
+"repetidas": 30
+
+    },
+{
+"_id": "59ebdb57a9067c9f7fb0d689",
+"calle": "233 Argyle Road",
+"fecha": "2017-09-09",
+"hora": "10:36:40",
+"latitud": -33.4878,
+"longitud": -70.664446,
+"repetidas": 2
+
+    },
+{
+"_id": "59ebdb579d5cc0eb33c061b1",
+"calle": "799 Quay Street",
+"fecha": "2017-03-18",
+"hora": "11:10:57",
+"latitud": -33.471837,
+"longitud": -70.683709,
+"repetidas": 8
+
+    },
+{
+"_id": "59ebdb57cfbf8e724039c19d",
+"calle": "908 Ocean Court",
+"fecha": "2017-04-07",
+"hora": "09:30:46",
+"latitud": -33.452361,
+"longitud": -70.607505,
+"repetidas": 1
+
+    },
+{
+"_id": "59ebdb575d6beadcd3b92499",
+"calle": "437 Cass Place",
+"fecha": "2017-02-20",
+"hora": "04:02:00",
+"latitud": -33.476021,
+"longitud": -70.594113,
+"repetidas": 7
+
+    },
+{
+"_id": "59ebdb570a0c3cff8bf71bb9",
+"calle": "667 Fair Street",
+"fecha": "2017-06-10",
+"hora": "07:45:30",
+"latitud": -33.443275,
+"longitud": -70.566008,
+"repetidas": 5
+
+    },
+{
+"_id": "59ebdb57aebfb949935a2bdc",
+"calle": "533 Butler Place",
+"fecha": "2017-10-09",
+"hora": "09:03:34",
+"latitud": -33.459585,
+"longitud": -70.671354,
+"repetidas": 3
+
+    },
+{
+"_id": "59ebdb578aa5b81677ae952c",
+"calle": "315 Varick Avenue",
+"fecha": "2017-02-15",
+"hora": "05:07:26",
+"latitud": -33.455192,
+"longitud": -70.633662,
+"repetidas": 16
+
+    },
+{
+"_id": "59ebdb57cced2ba18dfc84e3",
+"calle": "322 Turnbull Avenue",
+"fecha": "2017-02-23",
+"hora": "06:27:42",
+"latitud": -33.455895,
+"longitud": -70.668774,
+"repetidas": 9
+
+    }
+]
+        

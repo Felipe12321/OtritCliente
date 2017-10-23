@@ -23,15 +23,25 @@ export class EstadisticasComponent implements OnInit{
 		};
 
 
-	  public barChartLabels: 	string[];
+	  public barChartLabels: string[] = ['2017', '2018', '2019', '2020', '2021', '2022', '2023'];;
 	  public barChartType:		string = 'bar';
 	  public barChartLegend: 	boolean = true;
 	 
 	  public barChartData:any[] = [
-		{data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-		{data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+			{ data: [65, 59, 80, 81, 56, 55, 40], label: 'Numero de accidentes de tránsito' },
 	  ];
-	  
+		public barChartOptions2: any = {
+			scaleShowVerticalLines: false,
+			responsive: true
+		};
+		public barChartLabels2: string[] = ['Enero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
+																	'Octubre', 'Noviembre', 'Diciembre'];
+		public barChartType2: string = 'bar';
+		public barChartLegend2: boolean = true;
+
+		public barChartData2: any[] = [
+			{ data: [65, 59, 80, 81, 56, 55, 40], label: 'Numero de accidentes de tránsito' },
+		];
 	 
 	  constructor(
 		  private router: Router,
@@ -40,14 +50,7 @@ export class EstadisticasComponent implements OnInit{
 		  private servicio: Servicios
 	  ) { }
 	 
-	  // events
-	  public chartClicked(e:any):void {
-		console.log(e);
-	  }
-	 
-	  public chartHovered(e:any):void {
-		console.log(e);
-		}
+
 		
 		ngOnInit() {
 			this.titleService.setTitle('Estadísticas - OTRIT');
