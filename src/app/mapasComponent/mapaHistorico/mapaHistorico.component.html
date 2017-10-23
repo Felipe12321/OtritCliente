@@ -32,11 +32,11 @@
 					[streetViewControl]="false">
 					<agm-circle
 						
-						*ngFor="let c of circles; let i = index"
-						[latitude]="c.lat"
-						[longitude]="c.lng"
-						[fillColor]="c.color"
-						[radius]="c.r">
+						*ngFor="let acc2 of accidentes2; let i = index"
+						[latitude]="acc2.latitud"
+						[longitude]="acc2.longitud"
+						[fillColor]="'#FF0000'"
+						[radius]="acc2.repetidas*10">>
 					</agm-circle>			  
 			</agm-map>
 		</div>

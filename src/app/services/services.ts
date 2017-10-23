@@ -5,6 +5,7 @@ import { Accidente } from '../model/accidente';
 
 import 'rxjs/add/operator/map';
 import { DatePipe } from '@angular/common';
+import { Accidente2 } from '../model/accidente2';
 
 @Injectable()
 export class Servicios {
@@ -50,5 +51,13 @@ export class Servicios {
         }
         console.log(this.fecha);
         return this.fecha;
+    }
+
+
+    public getAccidentes2() {
+        return this.http.get('/assets/data/accidents2.json').map((data) => {
+            console.log(data.json());
+            return data.json();
+        });
     }
 }
