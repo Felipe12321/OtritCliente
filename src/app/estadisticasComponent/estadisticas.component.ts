@@ -31,6 +31,14 @@ export class EstadisticasComponent implements OnInit{
 		{data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
 		{data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
 	  ];
+	  
+	 
+	  constructor(
+		  private router: Router,
+		  private aR: ActivatedRoute,
+		  private titleService: Title,
+		  private servicio: Servicios
+	  ) { }
 	 
 	  // events
 	  public chartClicked(e:any):void {
@@ -56,11 +64,6 @@ export class EstadisticasComponent implements OnInit{
 			
 		}
 
-		constructor(
-			private router: Router,
-			private aR: ActivatedRoute,
-			private titleService: Title,
-			private servicio: Servicios
-		){}
+
 	
 }

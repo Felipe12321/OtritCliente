@@ -1,11 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3" style="background: red">
+    <div class="col-md-3">
       
     </div>
     
     <div class="col-md-9">
       <h2>Estadísticas</h2>
+      
       <canvas baseChart
         [datasets]="barChartData"
         [labels]="barChartLabels"
@@ -14,6 +15,16 @@
         [chartType]="barChartType"
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)">
+      </canvas>
+
+      <canvas baseChart
+        [datasets]="barChartData2"
+        [labels]="barChartLabels2"
+        [options]="barChartOptions2"
+        [legend]="barChartLegend2"
+        [chartType]="barChartType2"
+        (chartHover)="chartHovered2($event)"
+        (chartClick)="chartClicked2($event)">
       </canvas>
     </div>
   </div>  
