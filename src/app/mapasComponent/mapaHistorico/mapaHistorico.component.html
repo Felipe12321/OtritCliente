@@ -36,7 +36,11 @@
 						[latitude]="acc2.latitud"
 						[longitude]="acc2.longitud"
 						[fillColor]="'#FF0000'"
-						[radius]="acc2.repetidas*10">>
+						[radius]="acc2.repetidas*10"
+						(circleClick)="infoWindow">
+						<agm-info-window #infoWindow>
+							<strong>{{acc2.repetidas}}</strong>
+						</agm-info-window>
 					</agm-circle>			  
 			</agm-map>
 		</div>
