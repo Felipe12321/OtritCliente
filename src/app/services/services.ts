@@ -23,11 +23,8 @@ export class Servicios {
     
 
     public getAccidentes(){
-        return this.http.get('/assets/data/accidents.json').map((data) => {
-            console.log(data.json());
-            return data.json();
-        }
-        );
+        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded ' });
+        return this.http.get('https://serene-ocean-37939.herokuapp.com/').map(res => res.json());
     }
 
     public setFloat(accidente: Object[]){
