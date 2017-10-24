@@ -42,6 +42,7 @@ export class MapaTiempoRealComponent implements OnInit{
 			this.servicio.getAccidentes().subscribe(accidentes => {
 				this.accidentes = accidentes as Accidente[];
 				console.log(this.accidentes);
+				this.servicio.setFloat(this.accidentes);
 			});
 			
 			console.log(this.accidentes);

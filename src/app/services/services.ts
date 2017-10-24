@@ -30,6 +30,12 @@ export class Servicios {
         );
     }
 
+    public setFloat(accidente: Object[]){
+        for (let i = 0; i < accidente.length; i++){
+            accidente[i]['latitud'] = parseFloat(accidente[i]['latitud']);
+            accidente[i]['longitud'] = parseFloat(accidente[i]['longitud']);
+        }
+    }
 
 
     public crearMarcadoresHistorico(){
