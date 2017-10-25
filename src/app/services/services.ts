@@ -5,7 +5,7 @@ import { Accidente } from '../model/accidente';
 
 import 'rxjs/add/operator/map';
 import { DatePipe } from '@angular/common';
-import { Accidente2 } from '../model/accidente2';
+import { AccidenteHistorico } from '../model/accidenteHistorico';
 
 @Injectable()
 export class Servicios {
@@ -23,8 +23,8 @@ export class Servicios {
     
 
     public getAccidentes(){
-        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded ' });
-        return this.http.get('https://serene-ocean-37939.herokuapp.com/').map(res => res.json());
+        return this.http.get('https://serene-ocean-37939.herokuapp.com/getAccidentes.php')
+        .map(res => res.json());
     }
 
     public setFloat(accidente: Object[]){
@@ -35,32 +35,8 @@ export class Servicios {
     }
 
 
-    public crearMarcadoresHistorico(){
-		return [
-			{'lat': -33.444398, 'lng': -70.590462, 'color': '#0000FF' , 'r': this.getRadio(1000)},
-			{'lat': -33.425204, 'lng': -70.534647, 'color': '#0000FF', 'r': this.getRadio(2000)},
-			{'lat': -33.432323, 'lng': -70.750641, 'color': '#FF0000', 'r': this.getRadio(3000)},
-			{'lat': -33.507726, 'lng': -70.674152, 'color': '#FF0000', 'r': this.getRadio(4000)}
-		];
-    }
-
-    public getDate(accidentes: Accidente[]){
-        
-        for (let accidente of accidentes){
-            let full = accidente['fecha'] +' '+ accidente['hora'];
-            let date = (this.datePipe.transform(full, 'MM-dd-yyyy hh:mm:ss'));
-            let newDate = (new Date(date));
-            this.fecha.push(new Date(newDate));
-        }
-        console.log(this.fecha);
-        return this.fecha;
-    }
-
-
-    public getAccidentes2() {
-        return this.http.get('/assets/data/accidents2.json').map((data) => {
-            console.log(data.json());
-            return data.json();
-        });
+    public getAccidentesHistoricos() {
+        return this.http.get('https://serene-ocean-37939.herokuapp.com/getAccidentesCantidad.php')
+            .map(res => res.json());
     }
 }
