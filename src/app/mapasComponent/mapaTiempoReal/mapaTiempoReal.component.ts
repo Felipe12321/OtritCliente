@@ -36,13 +36,13 @@ export class MapaTiempoRealComponent implements OnInit{
 	  ){}
   
 	  ngOnInit() {
-			this.titleService.setTitle('Mapa histórico - OTRIT');
+			this.titleService.setTitle('Mapa tiempo real - OTRIT');
 			
 			
 			this.servicio.getAccidentes().subscribe(accidentes => {
 				this.accidentes = accidentes as Accidente[];
-				console.log(this.accidentes);
 				this.servicio.setFloat(this.accidentes);
+				console.log(this.accidentes);
 			});
 			
 			console.log(this.accidentes);
