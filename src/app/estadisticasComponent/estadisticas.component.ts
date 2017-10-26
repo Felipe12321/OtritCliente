@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-
+import { AsyncPipe } from '@angular/common';
 import { Accidente } from '../model/accidente';
 
 import { Servicios } from '../services/services';
@@ -16,7 +16,7 @@ export class EstadisticasComponent implements OnInit{
 	
 	private accidentes = [];
 
-	private selectedValue: string = 'Anual';
+	private selectedValue: 'Mensual';
 	private graficos = [{ value: 'Anual', viewValue: 'Anual' },
 										{ value: 'Mensual', viewValue: 'Mensual' }];
 
@@ -65,7 +65,7 @@ export class EstadisticasComponent implements OnInit{
 	public barChartLegendMensual: boolean = true;
 	
 	public barChartDataMensual: any[] = [
-			{ data: [65, 59, 80, 81, 56, 55, 40], label: 'Numero de accidentes de tránsito' },
+			{ data: [], label: 'Numero de accidentes de tránsito'},
 		];
 	 
 	constructor(
@@ -82,7 +82,7 @@ export class EstadisticasComponent implements OnInit{
 		this.servicio.getAccidentesEstadisticasMes().subscribe(accidentes => {
 			this.accidentes = accidentes;
 			console.log(this.accidentes);		
-			this.editarGrafico();	
+			this.editarGraficoMensual(this.accidentes);
 		});
 
 		this.editarLabel();
@@ -133,7 +133,13 @@ export class EstadisticasComponent implements OnInit{
 		this.barChartLabelsMensual = meses;
 	}
 
-	editarGrafico(){
-		console.log(this.accidentes);
+	editarGraficoMensual(accidentes: Object[]){
+		let cantAccidentes: number[] = [];
+		for(let i = 0; i< accidentes.length; i++){
+			cantAccidentes.push(+ this.accidentes[i]['cantidadMes']);
+		}
+
+		this.barChartDataMensual['data'] = cantAccidentes;
+
 	}
 }
