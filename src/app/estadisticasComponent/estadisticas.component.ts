@@ -58,7 +58,7 @@ export class EstadisticasComponent implements OnInit{
 			this.servicio.getAccidentes().subscribe(accidentes => {
 				this.accidentes = accidentes as Accidente[];
 				console.log(this.accidentes);
-				this.fechaAccidentes = this.servicio.getDate(this.accidentes);
+				
 				
 			});
 
