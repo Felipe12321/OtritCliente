@@ -11,6 +11,14 @@ label{
 	margin-top: 4em;
 }
 
+.form-group{
+	padding-left: 20%;
+}
+.form-group > form > label{
+	margin-right: 2em;
+}
+
+
 .container{
 	margin-top: -20px; 
 	margin-bottom: 5px; 

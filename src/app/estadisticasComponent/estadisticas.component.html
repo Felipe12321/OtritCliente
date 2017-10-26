@@ -1,11 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3" id="sidenav">
+
       <div id="accordion" class="panel-group">
-        <div class="panel panel-default">
+
+<!--Grafico Anual-->
+        <div class="panel panel-primary" *ngIf="selectedValue == 'Anual'">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Seleccionar año</a>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 
+                <span class="glyphicon glyphicon-chevron-down"></span>
+                Seleccionar año</a>
             </h4>
           </div>
           <div id="collapseOne" class="panel-collapse collapse">
@@ -17,6 +22,47 @@
             </div>
           </div>
         </div>
+
+
+
+<!--Grafico Mensual-->        
+        <div class="panel panel-primary" *ngIf="selectedValue == 'Mensual'">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> 
+                <span class="glyphicon glyphicon-chevron-down"></span>
+                Seleccionar mes
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" >
+            <div class="panel-body">
+              <mat-checkbox [(ngModel)]="ene" (change)="editarLabel()">Enero</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="feb" (change)="editarLabel()">Febrero</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="mar" (change)="editarLabel()">Marzo</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="abr" (change)="editarLabel()">Abril</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="may" (change)="editarLabel()">Mayo</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="jun" (change)="editarLabel()">Junio</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="jul" (change)="editarLabel()">Julio</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="ago" (change)="editarLabel()">Agosto</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="sep" (change)="editarLabel()">Septiembre</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="oct" (change)="editarLabel()">Octubre</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="nov" (change)="editarLabel()">Noviembre</mat-checkbox>
+              <br>
+              <mat-checkbox [(ngModel)]="dic" (change)="editarLabel()">Diciembre</mat-checkbox>
+            </div>
+          </div>
+        </div>
       </div>
 
 
@@ -25,26 +71,47 @@
     </div>
     
     <div class="col-md-9">
-      <h2>Estadísticas</h2>
+      <h2>Estadísticas</h2> 
+      <div class="form-group">
       
-      <canvas baseChart
-        [datasets]="barChartData"
-        [labels]="barChartLabels"
-        [options]="barChartOptions"
-        [legend]="barChartLegend"
-        [chartType]="barChartType"
-        (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)">
+        <form>
+          <label>seleccionar gráfico</label>
+          <mat-form-field>      
+            <mat-select 
+              placeholder="Gráfico" 
+              [(ngModel)]="selectedValue" 
+              name="graficos">
+              
+              <mat-option 
+                *ngFor="let grafico of graficos" 
+                [value]="grafico.value">
+                {{ grafico.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+
+
+      <canvas  
+        *ngIf="selectedValue == 'Anual'"
+        baseChart
+        [datasets]="barChartDataAnual"
+        [labels]="barChartLabelsAnual"
+        [options]="barChartOptionsAnual"
+        [legend]="barChartLegendAnual"
+        [chartType]="barChartTypeAnual">
       </canvas>
 
-      <canvas baseChart
-        [datasets]="barChartData2"
-        [labels]="barChartLabels2"
-        [options]="barChartOptions2"
-        [legend]="barChartLegend2"
-        [chartType]="barChartType2"
-        (chartHover)="chartHovered2($event)"
-        (chartClick)="chartClicked2($event)">
+      <canvas 
+        *ngIf="selectedValue == 'Mensual'"
+        baseChart
+        [datasets]="barChartDataMensual"
+        [labels]="barChartLabelsMensual"
+        [options]="barChartOptionsMensual"
+        [legend]="barChartLegendMensual"
+        [chartType]="barChartTypeMensual"
+>
       </canvas>
     </div>
   </div>  
