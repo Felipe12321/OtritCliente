@@ -16,7 +16,7 @@ import { MapaHistoricoComponent } from './mapasComponent/mapaHistorico/mapaHisto
 import { HomeComponent } from './homeComponent/home.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatSelectModule, MatInputModule} from '@angular/material';
+import {MatSelectModule, MatInputModule, MatCheckboxModule} from '@angular/material';
 
 import { NgIf } from '@angular/common';
 
@@ -41,6 +41,7 @@ import { NgIf } from '@angular/common';
     ReactiveFormsModule,
     MatSelectModule,
     MatInputModule,
+    MatCheckboxModule,
     BrowserAnimationsModule,
     
   ],
