@@ -14,7 +14,6 @@ import { EstadisticasComponent} from './estadisticasComponent/estadisticas.compo
 import { MapaTiempoRealComponent } from './mapasComponent/mapaTiempoReal/mapaTiempoReal.component';
 import { MapaHistoricoComponent } from './mapasComponent/mapaHistorico/mapaHistorico.component';
 import { HomeComponent } from './homeComponent/home.component';
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule, MatInputModule, MatCheckboxModule} from '@angular/material';
 
@@ -26,7 +25,7 @@ import { NgIf } from '@angular/common';
     EstadisticasComponent,
     MapaTiempoRealComponent,
     MapaHistoricoComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

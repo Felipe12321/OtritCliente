@@ -92,27 +92,29 @@
         </form>
       </div>
 
+      <div *ngIf="selectedValue == 'Anual'">
+        <canvas  
+          baseChart
+          [datasets]="barChartDataAnual"
+          [labels]="barChartLabelsAnual"
+          [options]="barChartOptionsAnual"
+          [legend]="barChartLegendAnual"
+          [chartType]="barChartTypeAnual">
+        </canvas>
+      </div>
+      
+      <div *ngIf="selectedValue == 'Mensual'">
+        <canvas  
+          *ngIf="isDataAvailableMensual"
+          baseChart
+          [datasets]="barChartDataMensual"
+          [labels]="barChartLabelsMensual"
+          [options]="barChartOptionsMensual"
+          [legend]="barChartLegendMensual"
+          [chartType]="barChartTypeMensual">
+        </canvas>
+      </div>
 
-      <canvas  
-        *ngIf="selectedValue == 'Anual'"
-        baseChart
-        [datasets]="barChartDataAnual"
-        [labels]="barChartLabelsAnual"
-        [options]="barChartOptionsAnual"
-        [legend]="barChartLegendAnual"
-        [chartType]="barChartTypeAnual">
-      </canvas>
-
-      <canvas 
-        *ngIf="selectedValue == 'Mensual' | async"
-        baseChart
-        [datasets]="barChartDataMensual"
-        [labels]="barChartLabelsMensual"
-        [options]="barChartOptionsMensual"
-        [legend]="barChartLegendMensual"
-        [chartType]="barChartTypeMensual"
->
-      </canvas>
     </div>
   </div>  
 </div>
