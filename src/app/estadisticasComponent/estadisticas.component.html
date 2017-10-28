@@ -5,7 +5,7 @@
       <div id="accordion" class="panel-group">
 
 <!--Grafico Anual-->
-        <div class="panel panel-primary" *ngIf="selectedValue == 'Anual'">
+        <div class="panel panel-primary" *ngIf="selectedValue == 'Anual' && isDataAvailableAnual">
           <div class="panel-heading">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 
@@ -15,10 +15,9 @@
           </div>
           <div id="collapseOne" class="panel-collapse collapse">
             <div class="panel-body">
-              <mat-checkbox>Check me 1!</mat-checkbox><br>
-              <mat-checkbox>Check me 2!</mat-checkbox><br>
-              <mat-checkbox>Check me 3!</mat-checkbox><br>
-              <mat-checkbox>Check me 4!</mat-checkbox>
+              <div *ngFor="let anio of barChartLabelsAnual">
+                <mat-checkbox>{{anio}}</mat-checkbox>
+              </div>
             </div>
           </div>
         </div>
@@ -92,28 +91,51 @@
         </form>
       </div>
 
-      <div *ngIf="selectedValue == 'Anual'">
-        <canvas  
-          baseChart
-          [datasets]="barChartDataAnual"
-          [labels]="barChartLabelsAnual"
-          [options]="barChartOptionsAnual"
-          [legend]="barChartLegendAnual"
-          [chartType]="barChartTypeAnual">
-        </canvas>
-      </div>
+      <mat-card *ngIf="selectedValue == 'Anual'">
+        <mat-card-content>
+          <canvas  
+           *ngIf="isDataAvailableAnual"
+            baseChart
+            [datasets]="barChartDataAnual"
+            [labels]="barChartLabelsAnual"
+            [options]="barChartOptionsAnual"
+            [legend]="barChartLegendAnual"
+            [chartType]="barChartTypeAnual">
+          </canvas>
+
+          <div *ngIf="!isDataAvailableAnual">
       
-      <div *ngIf="selectedValue == 'Mensual'">
-        <canvas  
-          *ngIf="isDataAvailableMensual"
-          baseChart
-          [datasets]="barChartDataMensual"
-          [labels]="barChartLabelsMensual"
-          [options]="barChartOptionsMensual"
-          [legend]="barChartLegendMensual"
-          [chartType]="barChartTypeMensual">
-        </canvas>
-      </div>
+            <h2 class="example-h2">Cargando...</h2>
+      
+            <mat-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
+            </mat-spinner>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card *ngIf="selectedValue == 'Mensual'">
+        <mat-card-content>
+          <canvas  
+            *ngIf="isDataAvailableMensual"
+            baseChart
+            [datasets]="barChartDataMensual"
+            [labels]="barChartLabelsMensual"
+            [options]="barChartOptionsMensual"
+            [legend]="barChartLegendMensual"
+            [chartType]="barChartTypeMensual">
+          </canvas>
+      
+      
+          <div
+          *ngIf="!isDataAvailableMensual">
+          
+            <h2 class="example-h2">Cargando...</h2>
+        
+            <mat-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
+            </mat-progress-spinner>
+          </div>
+        </mat-card-content>
+      </mat-card>
 
     </div>
   </div>  

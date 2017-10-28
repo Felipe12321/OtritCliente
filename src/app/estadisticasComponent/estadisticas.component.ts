@@ -16,6 +16,7 @@ import { Observable } from 'rxjs/Observable';
 export class EstadisticasComponent implements OnInit{
 	
 	private isDataAvailableMensual: boolean = false;
+	private isDataAvailableAnual: boolean = false;
 
 	private accidentes: Array<Observable<Object>>;
 	
@@ -28,13 +29,13 @@ export class EstadisticasComponent implements OnInit{
 		responsive: true,
 		
 	};
-	 public barChartLabelsAnual: string[] = ['2017', '2018', '2019', '2020', '2021', '2022', '2023'];
+	 public barChartLabelsAnual: 	string[] = [];
 	 public barChartTypeAnual:		string = 'bar';
 	 public barChartLegendAnual: 	boolean = true;
 	
 	 public barChartDataAnual:any[] = [
 		 { 
-			 data: [65, 59, 80, 81, 56, 55, 40], 
+			 data: [], 
 			 label: 'Numero de accidentes de tránsito', 
 			 
 		},
@@ -59,7 +60,7 @@ export class EstadisticasComponent implements OnInit{
 		scaleShowVerticalLines: false,
 		responsive: true
 	};
-	public barChartLabelsMensual: string[] ;
+	public barChartLabelsMensual: string[] = [];
 	public barChartTypeMensual: string = 'bar';
 	public barChartLegendMensual: boolean = true;
 	
@@ -79,17 +80,26 @@ export class EstadisticasComponent implements OnInit{
 
 		this.titleService.setTitle('Estadísticas - OTRIT');
 
-		this.editarLabel();	
-		this.servicio.getAccidentesEstadisticasMes().subscribe(accidentes => {
-			
+		this.updateGraficoAnual();
+		this.updateGraficoMensual();
+		
+	}
+
+
+	private updateGraficoAnual() {
+		this.servicio.getAccidentesEstadisticasAnio().subscribe(accidentes => {
 			this.accidentes = accidentes;
-			
-
-			this.editarGraficoMensual(this.accidentes);
-
+			this.editarGraficoAnual(this.accidentes);
 		});
 
-		
+		this.editarLabel();
+	}
+
+	private updateGraficoMensual(){
+		this.servicio.getAccidentesEstadisticasMes().subscribe(accidentes => {
+			this.accidentes = accidentes;
+			this.editarGraficoMensual(this.accidentes);
+		});
 	}
 
 	private editarLabel(){
@@ -139,12 +149,26 @@ export class EstadisticasComponent implements OnInit{
 	editarGraficoMensual(accidentes: Array<Observable<Object>>){
 		let cantAccidentes: number[] = [];
 
-		console.log(accidentes);
-
 		for(let i = 0; i< accidentes.length; i++){
 			cantAccidentes.push(+ this.accidentes[i]['cantidadMes']);
 		}
 		this.barChartDataMensual[0]['data'] = cantAccidentes;
 		this.isDataAvailableMensual = true;
+	}
+
+	
+
+	editarGraficoAnual(accidentes: Array<Observable<Object>>){
+		let cantAccidentes: number[] = [];
+		let labelAccidentes: string[] = [];
+
+		for (let i = 0; i< accidentes.length; i++){
+			cantAccidentes.push(+ this.accidentes[i]['cantidadAno']);
+			labelAccidentes.push(this.accidentes[i]['ano']);
+		}
+		this.barChartDataAnual[0]['data'] = cantAccidentes;
+		this.barChartLabelsAnual = labelAccidentes;
+		
+		this.isDataAvailableAnual = true;
 	}
 }
