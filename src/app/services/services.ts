@@ -34,7 +34,6 @@ export class Servicios {
         }
     }
 
-
     public getAccidentesHistoricos() {
         return this.http.get('https://serene-ocean-37939.herokuapp.com/getAccidentesCantidad.php')
             .map(res => res.json());
@@ -44,4 +43,10 @@ export class Servicios {
         return this.http.get('https://serene-ocean-37939.herokuapp.com/getAccidentesEstadistMes.php')
             .map((res: Response) => res.json());
     }
+
+    public getAccidentesEstadisticasAnio(): Observable<any>{
+        return this.http.get('https://serene-ocean-37939.herokuapp.com/getAccidentesEstadistAnual.php')
+        .map((res: Response) => res.json());
+    }
+
 }

@@ -15,7 +15,13 @@ import { MapaTiempoRealComponent } from './mapasComponent/mapaTiempoReal/mapaTie
 import { MapaHistoricoComponent } from './mapasComponent/mapaHistorico/mapaHistorico.component';
 import { HomeComponent } from './homeComponent/home.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatSelectModule, MatInputModule, MatCheckboxModule} from '@angular/material';
+import {
+  MatSelectModule, 
+  MatInputModule, 
+  MatCheckboxModule,
+  MatCardModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
 
 import { NgIf } from '@angular/common';
 
@@ -42,6 +48,8 @@ import { NgIf } from '@angular/common';
     MatInputModule,
     MatCheckboxModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatProgressSpinnerModule
     
   ],
   providers: [Servicios, DatePipe],
