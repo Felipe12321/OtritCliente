@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-
-import { Http} from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Http, Response } from '@angular/http';
 import { Accidente } from '../model/accidente';
 
 import 'rxjs/add/operator/map';
@@ -40,8 +40,8 @@ export class Servicios {
             .map(res => res.json());
     }
 
-    public getAccidentesEstadisticasMes(){
+    public getAccidentesEstadisticasMes(): Observable<any>{
         return this.http.get('https://serene-ocean-37939.herokuapp.com/getAccidentesEstadistMes.php')
-            .map(res => res.json());
+            .map((res: Response) => res.json());
     }
 }

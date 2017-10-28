@@ -5,6 +5,7 @@ import { AsyncPipe } from '@angular/common';
 import { Accidente } from '../model/accidente';
 
 import { Servicios } from '../services/services';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
 	selector: 'app-estadisticas-component',
@@ -14,21 +15,20 @@ import { Servicios } from '../services/services';
 
 export class EstadisticasComponent implements OnInit{
 	
-	private accidentes = [];
+	private isDataAvailableMensual: boolean = false;
 
-	private selectedValue: 'Mensual';
+	private accidentes: Array<Observable<Object>>;
+	
+	private selectedValue= 'Mensual';
 	private graficos = [{ value: 'Anual', viewValue: 'Anual' },
 										{ value: 'Mensual', viewValue: 'Mensual' }];
-
-
-	
 
 	public barChartOptionsAnual: any = {
 		scaleShowVerticalLines: true,
 		responsive: true,
 		
 	};
-	 public barChartLabelsAnual: string[] = ['2017', '2018', '2019', '2020', '2021', '2022', '2023'];;
+	 public barChartLabelsAnual: string[] = ['2017', '2018', '2019', '2020', '2021', '2022', '2023'];
 	 public barChartTypeAnual:		string = 'bar';
 	 public barChartLegendAnual: 	boolean = true;
 	
@@ -54,7 +54,6 @@ export class EstadisticasComponent implements OnInit{
 	private nov = true;
 	private dic = true;
 
-	private meses = [];
 
 	public barChartOptionsMensual: any = {
 		scaleShowVerticalLines: false,
@@ -65,7 +64,7 @@ export class EstadisticasComponent implements OnInit{
 	public barChartLegendMensual: boolean = true;
 	
 	public barChartDataMensual: any[] = [
-			{ data: [], label: 'Numero de accidentes de tránsito'},
+			{data: [], label: 'Numero de accidentes de tránsito'},
 		];
 	 
 	constructor(
@@ -75,17 +74,21 @@ export class EstadisticasComponent implements OnInit{
 	  private servicio: Servicios
 	) { }
 	 
-
 		
 	ngOnInit() {
+
 		this.titleService.setTitle('Estadísticas - OTRIT');
+
+		this.editarLabel();	
 		this.servicio.getAccidentesEstadisticasMes().subscribe(accidentes => {
+			
 			this.accidentes = accidentes;
-			console.log(this.accidentes);		
+			
+
 			this.editarGraficoMensual(this.accidentes);
+
 		});
 
-		this.editarLabel();
 		
 	}
 
@@ -133,13 +136,15 @@ export class EstadisticasComponent implements OnInit{
 		this.barChartLabelsMensual = meses;
 	}
 
-	editarGraficoMensual(accidentes: Object[]){
+	editarGraficoMensual(accidentes: Array<Observable<Object>>){
 		let cantAccidentes: number[] = [];
+
+		console.log(accidentes);
+
 		for(let i = 0; i< accidentes.length; i++){
 			cantAccidentes.push(+ this.accidentes[i]['cantidadMes']);
 		}
-
-		this.barChartDataMensual['data'] = cantAccidentes;
-
+		this.barChartDataMensual[0]['data'] = cantAccidentes;
+		this.isDataAvailableMensual = true;
 	}
 }
