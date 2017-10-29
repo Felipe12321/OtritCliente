@@ -16,6 +16,8 @@ import { Servicios } from '../../services/services';
 })
 
 export class MapaTiempoRealComponent implements OnInit{
+	private isDataAviable: boolean = false;
+
 	private lat: number = -33.4669728;
 	private lng: number = -70.6641528;
 	public searchControl: FormControl;
@@ -43,6 +45,8 @@ export class MapaTiempoRealComponent implements OnInit{
 				this.accidentes = accidentes as Accidente[];
 				this.servicio.setFloat(this.accidentes);
 				console.log(this.accidentes);
+
+				this.isDataAviable = true;
 			});
 			
 			console.log(this.accidentes);

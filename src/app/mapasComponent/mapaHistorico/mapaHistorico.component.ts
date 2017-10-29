@@ -15,6 +15,9 @@ import { Servicios } from '../../services/services';
 })
 
 export class MapaHistoricoComponent implements OnInit{
+
+	private isDataAviable: boolean = false;
+
 	private lat: number = -33.4669728;
   private lng: number = -70.6641528;
 	public searchControl: FormControl;
@@ -48,6 +51,8 @@ export class MapaHistoricoComponent implements OnInit{
 			this.accidentes = accidentes as AccidenteHistorico[];
 			this.servicio.setFloat(this.accidentes);
 			console.log(this.accidentes);
+			this.isDataAviable = true;
+
 		});
 
 		
