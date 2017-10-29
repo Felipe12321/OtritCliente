@@ -1,0 +1,21 @@
+h1{
+    font-family: 'Chelsea Market';
+    font-size: 4em;
+    color: gray;
+    margin-bottom: 1em;
+}
+h2{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.hrup{
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+    
+}
+.hrup:after{
+     content: "\00a0";
+}
+
