@@ -1,22 +1,42 @@
+
 <div class="container" style="text-align: center">	
 	<div class="row">
 		<div class="col-md-2">
 			<img style="float: left" src="http://queestudiarenchile.com/wp-content/uploads/2017/01/LOGO-UNAB.jpg" alt="" width="100">
 		</div>
 	
-		<div class="col-md-9">
-			<h1>Estadisticas de accidentes de tránsito</h1>
-			<h3> 
-				<a [routerLink]="['/mapaTiempoReal']">Accede a mapas en tiempo real</a>
-			</h3>
-			<h3>
-				<a [routerLink]="['/mapaHistorico']">A mapas con datos históricos</a>
-			</h3>
-			
-			<h3><a [routerLink]="['estadisticas']">y a gráficos</a>
-			</h3>
-			<h3></h3>
-
+		<div class="col-md-9 col-sm-10">
+			<h1>Estadisticas y datos de accidentes de tránsito</h1>
 		</div>
+	</div>	
+	<div class="row">
+		<hr class="hrup">
+		<h2>Accede a nuestros sitios</h2>
+		
+		<div class="col-md-4">
+					
+			<button
+				[routerLink]="['/mapaTiempoReal']" 
+				type="button" 
+				class="btn btn-primary btn-lg btn-block">Mapa en tiempo real</button>
+		
+		</div>
+		<div class="col-md-4">
+				
+					
+			<button
+				 [routerLink]="['/mapaHistorico']" 
+				 type="button" 
+				 class="btn btn-primary btn-lg btn-block">Mapa con datos históricos</button>
+				
+		</div>
+		<div class="col-md-4" id="grafico">
+			<button [routerLink]="['estadisticas']"
+			type="button" 
+			class="btn btn-primary btn-lg btn-block">Gráficos</button>						
+		</div>
+
+		
 	</div>
+	
 </div>
