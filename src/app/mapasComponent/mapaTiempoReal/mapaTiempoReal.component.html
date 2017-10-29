@@ -10,23 +10,37 @@
             </div>
         <div class="col-md-9">
             <h2>Mapa en tiempo real</h2>
-            <agm-map 
-                [latitude]="lat" 
-                [longitude]="lng" 
-                [zoom]="zoom" 
-                [minZoom]="11"
-                [streetViewControl]="false">
-                <agm-marker 
-                    *ngFor="let acc of accidentes; let i = index"
-                    [latitude]="acc.latitud"
-                    [longitude]="acc.longitud"
-                    [iconUrl]="'assets/traficon.png'"
-                    (markerClick)="infoWindow">
-                    <agm-info-window #infoWindow>
-                        <strong>{{acc.fecha}}</strong>
-                    </agm-info-window>
-                </agm-marker>
-            </agm-map>
+            <mat-card>
+                <mat-card-content>
+                    <agm-map 
+                    *ngIf="isDataAviable"
+                        [latitude]="lat" 
+                        [longitude]="lng" 
+                        [zoom]="zoom" 
+                        [minZoom]="11"
+                        [streetViewControl]="false">
+                        <agm-marker 
+                            *ngFor="let acc of accidentes; let i = index"
+                            [latitude]="acc.latitud"
+                            [longitude]="acc.longitud"
+                            [iconUrl]="'assets/traficon.png'"
+                            (markerClick)="infoWindow">
+                            <agm-info-window #infoWindow>
+                                <strong>{{acc.fecha}}</strong>
+                            </agm-info-window>
+                        </agm-marker>
+                    </agm-map>
+
+                    <div *ngIf="!isDataAviable">
+                    
+                        <h2 class="example-h2">Cargando...</h2>
+                    
+                        <mat-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
+                        </mat-spinner>
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
         </div>
     </div>
 </div>

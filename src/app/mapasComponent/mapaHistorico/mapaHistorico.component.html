@@ -2,47 +2,74 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-3">
-				<div class="form-group">
+			<div class="form-group">
 
-					<form>
-						<!--Input-->
-						<label for="">Buscar sector</label>
-						<input id="autocomplete" placeholder="Ingresa una dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" style="width: 100%">
-						<br> <br>
-						<label>seleccionar fecha</label>
-						<mat-form-field>
-							
-							
-						<mat-select placeholder="Año">
-							<mat-option *ngFor="let year of years" [value]="year.value">{{ year.viewValue }}</mat-option>
-						</mat-select>
+				<form>
+					<!--Input-->
+					<label for="">Buscar sector</label>
+					<input id="autocomplete" placeholder="Ingresa una dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" style="width: 100%">
+					<br> <br>
+					
+				</form>
 
-
-					  </mat-form-field>
-					</form>
+				<div id="accordion" class="panel-group" *ngIf="isDataAviable">
+				
+					<!--Grafico Anual-->
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+									<span class="glyphicon glyphicon-chevron-down"></span>
+									Seleccionar año</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div *ngFor="let year of years">
+									<mat-checkbox>{{year.viewValue}}</mat-checkbox>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+
 			</div>
+		</div>
 		<div class="col-md-9">
-				<h2>Mapa histórico</h2>
-				<agm-map 
-					[latitude]="lat" 
-					[longitude]="lng" 
-					[zoom]="zoom" 
-					[minZoom]="11"
-					[streetViewControl]="false">
-					<agm-circle
-						
-						*ngFor="let acc2 of accidentes; let i = index"
-						[latitude]="acc2.latitud"
-						[longitude]="acc2.longitud"
-						[fillColor]="'#FF0000'"
-						[radius]="acc2.cantidad*20"
-						(circleClick)="infoWindow">
-						<agm-info-window #infoWindow>
-							<strong>{{acc2.cantidad}}</strong>
-						</agm-info-window>
-					</agm-circle>			  
-			</agm-map>
+			<h2>Mapa histórico</h2>
+			<mat-card>
+				<mat-card-content>
+					<agm-map 
+						*ngIf="isDataAviable"
+						[latitude]="lat" 
+						[longitude]="lng" 
+						[zoom]="zoom" 
+						[minZoom]="11"
+						[streetViewControl]="false">
+						<agm-circle
+								
+							*ngFor="let acc2 of accidentes; let i = index"
+							[latitude]="acc2.latitud"
+							[longitude]="acc2.longitud"
+							[fillColor]="'#FF0000'"
+							[radius]="acc2.cantidad*20"
+							(circleClick)="infoWindow">
+							<agm-info-window #infoWindow>
+								<strong>{{acc2.cantidad}}</strong>
+							</agm-info-window>
+						</agm-circle>			  
+					</agm-map>
+
+					<div *ngIf="!isDataAviable">
+					
+						<h2 class="example-h2">Cargando...</h2>
+					
+						<mat-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
+						</mat-spinner>
+					</div>
+
+				</mat-card-content>
+			</mat-card>
 		</div>
 	</div>
 </div>
