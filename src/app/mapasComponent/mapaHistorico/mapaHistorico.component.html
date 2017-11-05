@@ -14,7 +14,7 @@
 
 				<div id="accordion" class="panel-group" *ngIf="isDataAviable">
 				
-					<!--Grafico Anual-->
+					
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h4 class="panel-title">
@@ -45,7 +45,7 @@
 						[longitude]="lng" 
 						[zoom]="zoom" 
 						[minZoom]="11"
-						[streetViewControl]="false">
+						[streetViewControl]="true">
 						<agm-circle
 								
 							*ngFor="let acc2 of accidentes; let i = index"
