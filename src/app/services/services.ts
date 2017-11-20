@@ -49,4 +49,7 @@ export class Servicios {
         .map((res: Response) => res.json());
     }
 
+    public dowloader2(){
+        return this.http.get('https://serene-ocean-37939.herokuapp.com/downloader2.php');
+    }
 }
