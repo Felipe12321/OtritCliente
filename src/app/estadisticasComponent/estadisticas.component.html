@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3" id="sidenav">
-
+<button class="btn btn-primary" (click)="descargaDatos()">Descarga Datos</button>
+<hr>
       <div id="accordion" class="panel-group">
-
+        
 <!--Grafico Anual-->
         <div class="panel panel-primary" *ngIf="selectedValue == 'Anual' && isDataAvailableAnual">
           <div class="panel-heading">
@@ -25,6 +26,8 @@
 
 
 <!--Grafico Mensual-->        
+        
+        
         <div class="panel panel-primary" *ngIf="selectedValue == 'Mensual'">
           <div class="panel-heading">
             <h4 class="panel-title">
