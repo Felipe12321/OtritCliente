@@ -11,7 +11,6 @@ import { Servicios } from '../../services/services';
 	selector: 'app-mapa-historico-component',
 	templateUrl: './mapaHistorico.component.html',
 	styleUrls: ['./mapaHistorico.component.css'],
-
 })
 
 export class MapaHistoricoComponent implements OnInit{
@@ -19,18 +18,13 @@ export class MapaHistoricoComponent implements OnInit{
 	private isDataAviable: boolean = false;
 
 	private lat: number = -33.4669728;
-  private lng: number = -70.6641528;
+	private lng: number = -70.6641528;
+	
 	public searchControl: FormControl;
 	public zoom: number;
 	private circles: Object;
 	private accidentes: AccidenteHistorico[];
-	
-
-	years = [
-		{value: '0', viewValue: '2017'},
-		{value: '1', viewValue: '2018'},
-		{value: '2', viewValue: '2019'}
-	];
+	private years = [];
 
 	@ViewChild('search')
 	public searchElementRef: ElementRef;
@@ -46,20 +40,15 @@ export class MapaHistoricoComponent implements OnInit{
 
 	ngOnInit() {
 		this.titleService.setTitle('Mapa histórico - OTRIT');		
-		
+
 		this.servicio.getAccidentesHistoricos().subscribe(accidentes => {
 			this.accidentes = accidentes as AccidenteHistorico[];
 			this.servicio.setFloat(this.accidentes);
 			console.log(this.accidentes);
 			this.isDataAviable = true;
-
 		});
 
-		
-
-
 		this.zoom = 11;
-
 		this.searchControl = new FormControl();
 
 		this.mapsAPILoader.load().then(() => {
@@ -76,7 +65,7 @@ export class MapaHistoricoComponent implements OnInit{
 				if (place.geometry === undefined || place.geometry === null) {
 				  return;
 				}
-				
+								
 				// set latitude, longitude and zoom
 				this.lat = place.geometry.location.lat();
 				this.lng = place.geometry.location.lng();

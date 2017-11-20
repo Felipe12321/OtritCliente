@@ -14,7 +14,7 @@
 
 				<div id="accordion" class="panel-group" *ngIf="isDataAviable">
 				
-					
+					<!--Grafico Anual-->
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h4 class="panel-title">
@@ -61,10 +61,10 @@
 							[iconUrl]="'assets/transparente.jpg'"
 							(markerClick)="infoWindow">
                             <agm-info-window #infoWindow>
-                                <strong>{{acc2.cantidad}}</strong>
+								<strong><p>Accidentes año {{acc2.year}}</p></strong>
+								<strong>Cantidad: {{acc2.cantidad}}</strong>
                             </agm-info-window>
-						</agm-marker>
-						
+						</agm-marker>		  
 					</agm-map>
 
 					<div *ngIf="!isDataAviable">
