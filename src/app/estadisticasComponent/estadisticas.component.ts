@@ -177,7 +177,6 @@ export class EstadisticasComponent implements OnInit{
 			
 		}
 
-
 		this.isDataAvailableMensual = true;
 	}
 
@@ -195,5 +194,11 @@ export class EstadisticasComponent implements OnInit{
 		this.barChartLabelsAnual = labelAccidentes;
 		
 		this.isDataAvailableAnual = true;
+	}
+
+	descargaDatos(){
+		console.log('descargando datos');
+
+		this.servicio.descargaExcel(this.barChartDataMensual);
 	}
 }
