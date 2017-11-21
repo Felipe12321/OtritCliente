@@ -1,0 +1,556 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Estadísticas</h2>
+        <div class="form-group">
+    </div>
+
+    <p>Por favor, califique que tan de acuerdo se encuentra con los siguentes enunciados correspondientes a la plataforma web OTRIT.</p>
+    <ul>
+        <li>Intenta responde todos los enunciados</li>
+        <li>En los que no se aplique el enunciado, responder con: NA</li>
+    </ul>
+<hr>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <table>
+        
+                <th>
+                <h4><b>Usabilidad</b></h4>
+                </th>
+                
+                <th class="th-small">Muy insatisfecho</th>
+
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                
+                <th class="th-small">Muy satisfecho</th>
+                <th>NA</th>
+                
+                
+                <tr>
+                    <td class="td-li">
+
+                        <a name="q1">1. </a><label for="q1">Me ayuda a ser mas eficiente.</label>
+                    </td>
+                    <td></td>
+
+                    <td><input type="radio" id="radio" [value]="1" name="q1" ngModel></td>
+                    <td><input type="radio" id="radio" [value]="2" name="q1" ngModel></td>
+                    <td><input type="radio" id="radio" [value]="3" name="q1" ngModel></td>
+                    <td><input type="radio" id="radio" [value]="4" name="q1" ngModel></td>
+                    <td><input type="radio" id="radio" [value]="5" name="q1" ngModel></td>
+                    <td><input type="radio" id="radio" [value]="6" name="q1" ngModel></td>
+                    <td><input type="radio" id="radio" [value]="7" name="q1" ngModel></td>
+                    <td></td>
+                    <td><input type="radio" id="radio" [value]="-1" name="q1" ngModel></td>
+                                    
+                    
+                    
+                </tr>
+                <tr>
+                    <a name="q2">2. </a><label for="q2">Me ayuda a ser mas productivo.</label>
+                    <td></td>
+                    
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q2"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q2"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q2"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q2"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q2"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q2"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q2"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q2"></td>
+                    
+                </tr>
+                <tr>
+                    <a name="q3">3. </a><label for="q3">Es usable.</label>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q3"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q3"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q3"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q3"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q3"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q3"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q3"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q3"></td>
+                
+                </tr>
+                <tr>
+                    <a name="q4">4. </a><label for="q4">Me da mayor control
+                         sobre actividades cotidianas.</label>
+                
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q4"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q4"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q4"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q4"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q4"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q4"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q4"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q4"></td>
+                </tr>
+                <tr>
+                    <a name="q5">5. <label for="q5">Hace que las actividades que quiero realizar sean más fáciles de terminar.</label> </a>
+                    
+
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q5"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q5"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q5"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q5"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q5"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q5"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q5"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q5"></td>
+                </tr>
+                <tr>
+                    <a name="q6">6. </a><label for="q6">Me ahorra tiempo el usarla.</label>
+                    
+           
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q6"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q6"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q6"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q6"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q6"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q6"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q6"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q6"></td>
+                </tr>
+                <tr>
+                    <a name="q7">7. </a><label for="q7">Cumple con mis necesidades.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q7"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q7"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q7"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q7"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q7"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q7"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q7"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q7"></td>
+                </tr>
+                <tr>
+                    <a name="q8">8. </a><label for="q8">Hace todo lo que espero que haga.</label>
+                    
+                
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q8"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q8"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q8"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q8"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q8"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q8"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q8"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q8"></td>
+                </tr>
+
+                <th>
+                <h4><b>Facilidad de uso</b></h4>
+                </th>
+                
+
+                <th class="th-small">Muy insatisfecho</th>                
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th class="th-small">Muy satisfecho</th>
+                <th>NA</th>
+
+                <tr>
+                    <a name="q9">9. </a>
+                    <label for="q9">Es fáci de usar.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q9"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q9"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q9"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q9"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q9"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q9"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q9"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q9"></td>
+                </tr>
+                <tr>
+                    <a name="q10">10. </a>
+                    <label for="q10">Su uso es simple.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q10"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q10"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q10"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q10"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q10"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q10"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q10"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q10"></td>
+                </tr>
+                <tr>
+                    <a name="q11">11. </a>
+                    <label for="q11">La interfaz es amigable.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q11"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q11"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q11"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q11"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q11"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q11"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q11"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q11"></td>
+                </tr>
+                <tr>
+                    <a name="q12">12. </a>
+                    <label for="q12">Requiere de pocos pasos completar lo que quiero hacer.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q12"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q12"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q12"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q12"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q12"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q12"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q12"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q12"></td>
+                </tr>
+                <tr>
+                    <a name="q13">13. </a>
+                    <label for="q13">Es flexible.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q13"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q13"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q13"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q13"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q13"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q13"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q13"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q13"></td>
+                </tr>
+                <tr>
+                    <a name="q14">14. </a>
+                    <label for="q14">No requiere de mucho esfuerzo.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q14"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q14"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q14"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q14"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q14"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q14"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q14"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q14"></td>
+                </tr>
+                <tr>
+                    <a name="q15">15. </a>
+                    <label for="q15">No necesito leer instrucciones.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q15"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q15"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q15"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q15"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q15"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q15"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q15"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q15"></td>
+                </tr>
+                <tr>
+                    <a name="q16">16. </a>
+                    <label for="q16">No noté inconsistencias en su uso.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q16"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q16"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q16"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q16"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q16"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q16"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q16"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q16"></td>
+                </tr>
+                <tr>
+                    <a name="q17">17. </a>
+                    <label for="q17">Les servirá a usuarios ocasionales y regulares.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q17"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q17"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q17"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q17"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q17"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q17"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q17"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q17"></td>
+                </tr>
+                <tr>
+                    <a name="q18">18. </a>
+                    <label for="q18">Puedo corregir mis errores rápidamente.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q18"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q18"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q18"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q18"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q18"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q18"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q18"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q18"></td>
+                </tr>
+                <tr>
+                    <a name="q19">19. </a>
+                    <label for="q19">Puedo utilizarla correctamente todas las veces.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q19"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q19"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q19"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q19"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q19"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q19"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q19"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q19"></td>
+                </tr>
+                
+                <th>
+                <h4><b>Fácil de aprender a usar</b></h4>
+                </th>
+
+                <th class="th-small">Muy insatisfecho</th>
+                
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th class="th-small">Muy satisfecho</th>
+                <th>NA</th>
+                
+                <tr>
+                    <a name="q20">20. </a>
+                    <label for="q20">Aprendí a utilizarla rápidamente.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q20"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q20"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q20"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q20"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q20"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q20"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q20"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q20"></td>
+                </tr>
+                <tr>
+                    <a name="q21">21. </a>
+                    <label for="q21">Es fácil recordar como utilizarla.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q21"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q21"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q21"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q21"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q21"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q21"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q21"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q21"></td>
+                </tr>
+                <tr>
+                    <a name="q22">22. </a>
+                    <label for="q22">Es fácil aprender a utilizarla.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q22"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q22"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q22"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q22"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q22"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q22"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q22"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q22"></td>
+                </tr>
+                <tr>
+                    <a name="q23">23. </a>
+                    <label for="q23">Me volví habil con su uso.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q23"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q23"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q23"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q23"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q23"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q23"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q23"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q23"></td>
+                </tr>
+                
+                <th>
+                <h4><b>Satisfacción</b></h4>
+                </th>
+                <th class="th-small">Muy insatisfecho</th>
+                
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th class="th-small">Muy satisfecho</th>
+                <th>NA</th>
+
+                <tr>
+                    <a name="q24">24. </a>
+                    <label for="q24">Estoy satisfecho con ella.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q24"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q24"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q24"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q24"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q24"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q24"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q24"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q24"></td>
+                </tr>
+                <tr>
+                    <a name="q25">25. </a>
+                    <label for="q25">La recomedaría a un amigo.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q25"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q25"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q25"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q25"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q25"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q25"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q25"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q25"></td>
+                </tr>
+                <tr>
+                    <a name="q26">26. </a>
+                    <label for="q26">Es agradable usarla.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q26"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q26"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q26"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q26"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q26"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q26"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q26"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q26"></td>
+                </tr>
+                <tr>
+                    <a name="q27">27. </a>
+                    <label for="q27">Funciona como lo espero.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q27"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q27"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q27"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q27"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q27"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q27"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q27"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q27"></td>
+                </tr>
+                <tr>
+                    <a name="q28">28. </a>
+                    <label for="q28">Es estupenda.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q28"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q28"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q28"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q28"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q28"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q28"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q28"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q28"></td>
+                </tr>
+                <tr>
+                    <a name="q29">29. </a>
+                    <label for="q29">Siento que la necesito.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q29"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q29"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q29"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q29"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q29"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q29"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q29"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q29"></td>
+                </tr>
+                <tr>
+                    <a name="q30">30. </a>
+                    <label for="q30">Es agradable usarla.</label>
+                    
+                <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="1" name="q30"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="2" name="q30"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="3" name="q30"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="4" name="q30"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="5" name="q30"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="6" name="q30"></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="7" name="q30"></td>
+                    <td></td>
+                    <td><input  ngModel type="radio" id="radio" [value]="-1" name="q30"></td>
+                </tr>
+            
+                
+    </table>
+    
+    
+    <div class="col-md-6 col-lg-6" id="comentario">
+        <label for="comment"><b>Comentarios positivos:</b></label>
+        <textarea [(ngModel)]="textValue1" class="form-control" rows="5" name="comment"></textarea>
+    </div>
+    <div class="col-md-6 col-lg-6" id="comentario">
+        <label for="comment2"><b>Comentarios negarivos:</b></label>
+        <textarea [(ngModel)]="textValue2" class="form-control" rows="5" name="comment2"></textarea>
+    </div>
+
+    <div class="btnEnviar col-md-offset-4 col-md-4">
+        <button type="submit" class="btn btn-lg btn-block btn-success"> Terminár encuesta</button>
+    </div>
+</form>
+</div>

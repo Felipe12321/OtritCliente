@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3" id="sidenav">
-<button class="btn btn-primary" (click)="descargaDatos()">Descarga Datos</button>
+<button class="btn btn-success" (click)="descargaDatos()">Descarga Datos</button>
 <hr>
       <div id="accordion" class="panel-group">
         
@@ -11,14 +11,14 @@
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 
                 <span class="glyphicon glyphicon-chevron-down"></span>
-                Seleccionar año</a>
+                Panel</a>
             </h4>
           </div>
           <div id="collapseOne" class="panel-collapse collapse">
             <div class="panel-body">
-              <div *ngFor="let anio of barChartLabelsAnual">
-                <mat-checkbox>{{anio}}</mat-checkbox>
-              </div>
+              
+                Panel
+              
             </div>
           </div>
         </div>
@@ -33,36 +33,12 @@
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> 
                 <span class="glyphicon glyphicon-chevron-down"></span>
-                Seleccionar mes
+                Panel
               </a>
             </h4>
           </div>
           <div id="collapseTwo" class="panel-collapse collapse" >
-            <div class="panel-body">
-              <mat-checkbox [(ngModel)]="ene" (change)="editarLabel()">Enero</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="feb" (change)="editarLabel()">Febrero</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="mar" (change)="editarLabel()">Marzo</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="abr" (change)="editarLabel()">Abril</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="may" (change)="editarLabel()">Mayo</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="jun" (change)="editarLabel()">Junio</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="jul" (change)="editarLabel()">Julio</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="ago" (change)="editarLabel()">Agosto</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="sep" (change)="editarLabel()">Septiembre</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="oct" (change)="editarLabel()">Octubre</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="nov" (change)="editarLabel()">Noviembre</mat-checkbox>
-              <br>
-              <mat-checkbox [(ngModel)]="dic" (change)="editarLabel()">Diciembre</mat-checkbox>
-            </div>
+            Panel
           </div>
         </div>
       </div>
@@ -94,6 +70,8 @@
         </form>
       </div>
 
+<!--Gráfico anual-->
+
       <mat-card *ngIf="selectedValue == 'Anual'">
         <mat-card-content>
           <canvas  
@@ -103,7 +81,8 @@
             [labels]="barChartLabelsAnual"
             [options]="barChartOptionsAnual"
             [legend]="barChartLegendAnual"
-            [chartType]="barChartTypeAnual">
+            [chartType]="barChartTypeAnual"
+            [colors]="Colors">
           </canvas>
 
           <div *ngIf="!isDataAvailableAnual">
