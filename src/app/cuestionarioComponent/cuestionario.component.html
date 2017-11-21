@@ -12,6 +12,12 @@
     </ul>
 <hr>
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    
+    <div class="form-group">
+        <label for="nombre"><b>Ingresa tu nombre:</b></label>
+        <input id="nameInput" type="text" placeholder="Nombre" name="nombre" class="form-control" ngModel>
+    </div>
+
     <table>
         
                 <th>
@@ -39,15 +45,15 @@
                     </td>
                     <td></td>
 
-                    <td><input type="radio" id="radio" [value]="1" name="q1" ngModel></td>
-                    <td><input type="radio" id="radio" [value]="2" name="q1" ngModel></td>
-                    <td><input type="radio" id="radio" [value]="3" name="q1" ngModel></td>
-                    <td><input type="radio" id="radio" [value]="4" name="q1" ngModel></td>
-                    <td><input type="radio" id="radio" [value]="5" name="q1" ngModel></td>
-                    <td><input type="radio" id="radio" [value]="6" name="q1" ngModel></td>
-                    <td><input type="radio" id="radio" [value]="7" name="q1" ngModel></td>
+                    <td><input type="radio" id="radio" [value]="1" name="q1" ngModel required></td>
+                    <td><input type="radio" id="radio" [value]="2" name="q1" ngModel required></td>
+                    <td><input type="radio" id="radio" [value]="3" name="q1" ngModel required></td>
+                    <td><input type="radio" id="radio" [value]="4" name="q1" ngModel required></td>
+                    <td><input type="radio" id="radio" [value]="5" name="q1" ngModel required></td>
+                    <td><input type="radio" id="radio" [value]="6" name="q1" ngModel required></td>
+                    <td><input type="radio" id="radio" [value]="7" name="q1" ngModel required></td>
                     <td></td>
-                    <td><input type="radio" id="radio" [value]="-1" name="q1" ngModel></td>
+                    <td><input type="radio" id="radio" [value]="-1" name="q1" ngModel required></td>
                                     
                     
                     
@@ -554,3 +560,7 @@
     </div>
 </form>
 </div>
+
+
+
+

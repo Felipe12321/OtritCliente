@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 
 import { DatePipe } from '@angular/common';
 import { AccidenteHistorico } from '../model/accidenteHistorico';
+import { post } from 'selenium-webdriver/http';
 
 @Injectable()
 export class Servicios {
@@ -53,5 +54,22 @@ export class Servicios {
 
     public descargaExcel(data: any){
         window.location.href = 'http://serene-ocean-37939.herokuapp.com/downloader2.php';
+    }
+
+
+    public sedData(values: Array<any>){
+
+        console.log(JSON.stringify(values));
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+        let data = 'values='+JSON.stringify(values);
+
+        return this.http.post('http://serene-ocean-37939.herokuapp.com/saveEncuesta.php', 
+        data,
+        {    headers: headers    }).subscribe(res => {
+            console.log(res);
+        });
+
     }
 }
