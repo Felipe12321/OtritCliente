@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { AppRouting } from './app.routing';
 import { ChartsModule } from 'ng2-charts';
 import { DatePipe } from '@angular/common';
@@ -14,13 +14,16 @@ import { EstadisticasComponent} from './estadisticasComponent/estadisticas.compo
 import { MapaTiempoRealComponent } from './mapasComponent/mapaTiempoReal/mapaTiempoReal.component';
 import { MapaHistoricoComponent } from './mapasComponent/mapaHistorico/mapaHistorico.component';
 import { HomeComponent } from './homeComponent/home.component';
+import { CuestionarioComponent } from './cuestionarioComponent/cuestionario.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {
   MatSelectModule, 
   MatInputModule, 
   MatCheckboxModule,
   MatCardModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatRadioModule
 } from '@angular/material';
 
 
@@ -33,6 +36,7 @@ import { NgIf } from '@angular/common';
     MapaTiempoRealComponent,
     MapaHistoricoComponent,
     HomeComponent,
+    CuestionarioComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,8 @@ import { NgIf } from '@angular/common';
     MatCheckboxModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatRadioModule
     
   ],
   providers: [Servicios, DatePipe],
