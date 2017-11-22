@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 
 import { DatePipe } from '@angular/common';
 import { AccidenteHistorico } from '../model/accidenteHistorico';
-import { post } from 'selenium-webdriver/http';
 
 @Injectable()
 export class Servicios {
