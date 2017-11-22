@@ -26,8 +26,6 @@ import {
   MatCheckboxModule,
   MatCardModule,
   MatProgressSpinnerModule,
-  MatRadioModule,
-  MatDialogModule
 } from '@angular/material';
 
 
@@ -64,8 +62,6 @@ import { NgIf } from '@angular/common';
     BrowserAnimationsModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatRadioModule,
-    MatDialogModule
     
   ],
   providers: [Servicios, DatePipe],
