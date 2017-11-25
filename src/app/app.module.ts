@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRouting } from './app.routing';
@@ -53,6 +54,7 @@ import { NgIf } from '@angular/common';
       apiKey: 'AIzaSyCHImk9BEYh0Z27DT8OD-6wx6cRYNJSpcY',
       libraries: ['places']
     }),
+    AgmJsMarkerClustererModule,
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
