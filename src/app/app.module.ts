@@ -14,13 +14,18 @@ import { EstadisticasComponent} from './estadisticasComponent/estadisticas.compo
 import { MapaTiempoRealComponent } from './mapasComponent/mapaTiempoReal/mapaTiempoReal.component';
 import { MapaHistoricoComponent } from './mapasComponent/mapaHistorico/mapaHistorico.component';
 import { HomeComponent } from './homeComponent/home.component';
+import { CuestionarioComponent } from './cuestionarioComponent/cuestionario.component';
+import { ConfirmComponent } from './cuestionarioComponent/cuestionario.component';
+
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import {
   MatSelectModule, 
   MatInputModule, 
   MatCheckboxModule,
   MatCardModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
 } from '@angular/material';
 
 
@@ -33,11 +38,17 @@ import { NgIf } from '@angular/common';
     MapaTiempoRealComponent,
     MapaHistoricoComponent,
     HomeComponent,
+    CuestionarioComponent,
+    ConfirmComponent
+  ],
+  entryComponents: [
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
     AppRouting,
     HttpModule,
+    BootstrapModalModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCHImk9BEYh0Z27DT8OD-6wx6cRYNJSpcY',
       libraries: ['places']
@@ -50,7 +61,7 @@ import { NgIf } from '@angular/common';
     MatCheckboxModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
     
   ],
   providers: [Servicios, DatePipe],

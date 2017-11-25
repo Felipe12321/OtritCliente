@@ -77,4 +77,21 @@ export class Servicios {
         const blob = new Blob([response._body], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
         saveAs(blob, filename);
     }
+
+
+    public sedData(values: Array<any>){
+
+        console.log(JSON.stringify(values));
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+        let data = 'values='+JSON.stringify(values);
+
+        return this.http.post('http://serene-ocean-37939.herokuapp.com/saveEncuesta.php', 
+        data,
+        {    headers: headers    }).subscribe(res => {
+            console.log(res);
+        });
+
+    }
 }
