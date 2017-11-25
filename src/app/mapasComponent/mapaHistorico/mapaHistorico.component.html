@@ -25,14 +25,15 @@
 						</div>
 						<div id="collapseOne" class="panel-collapse collapse">
 							<div class="panel-body">
-								<div *ngFor="let year of years">
-									<mat-checkbox>{{year.viewValue}}</mat-checkbox>
+								<div *ngFor="let year of years; let i = index">
+									<mat-checkbox [(ngModel)]="isEnabled[i]"
+												 (change)="change(year,i)"
+									>{{year}}</mat-checkbox>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 		<div class="col-md-9">
@@ -46,27 +47,22 @@
 						[zoom]="zoom" 
 						[minZoom]="11"
 						[streetViewControl]="false">
-						<agm-circle								
-							*ngFor="let acc2 of accidentes; let i = index"
-							[latitude]="acc2.latitud"
-							[longitude]="acc2.longitud"
-							[fillColor]="'#FF0000'"
-							[radius]="acc2.cantidad*10">
-						</agm-circle>
-						
-						<agm-marker
-							*ngFor="let acc2 of accidentes; let i = index"
-                            [latitude]="acc2.latitud"
-							[longitude]="acc2.longitud"
-							[iconUrl]="'assets/transparente.jpg'"
-							(markerClick)="infoWindow">
-                            <agm-info-window #infoWindow>
-								<strong><p>Accidentes año {{acc2.year}}</p></strong>
-								<strong>Cantidad: {{acc2.cantidad}}</strong>
-                            </agm-info-window>
-						</agm-marker>		  
-					</agm-map>
+			
+						<agm-marker-cluster [imagePath]="'assets/marker/m'" [averageCenter]="true">
 
+							<agm-marker *ngFor="let acc of accidentes;" 
+								[latitude]="acc.latitud" 
+								[longitude]="acc.longitud" 
+								[iconUrl]="'assets/marker/pin.png'"
+
+							(markerClick)="infoWindow">
+								<agm-info-window #infoWindow>
+								</agm-info-window>
+							</agm-marker>
+
+						</agm-marker-cluster>
+							  
+					</agm-map>
 					<div *ngIf="!isDataAviable">
 					
 						<h2 class="example-h2">Cargando...</h2>
