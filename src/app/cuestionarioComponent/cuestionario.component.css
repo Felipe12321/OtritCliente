@@ -1,0 +1,49 @@
+h4{
+    color: rgb(20, 80, 20)
+}
+
+
+.btnEnviar{
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+table{
+    width: 100%
+}
+ #radio{
+     padding: 3px 5px 0px 5px;
+ }
+
+
+th{
+    padding-top: 20px;
+    border-bottom: 6px solid #e0e0e0;
+    font-family: "Droid serif";
+    width: 20px;
+    text-align: center;
+}
+.th-small{
+    font-size: 80%;
+    width: 15%
+}
+
+label{
+    font-weight: normal !important;
+}
+a{
+    color: #333;
+}
+a:hover{
+    color: #333;
+    text-decoration: none;
+}
+
+#comentario{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+#nameInput{
+    width: 30%;
+}
