@@ -31,6 +31,7 @@ import {
 
 
 import { NgIf } from '@angular/common';
+import { EstadisticasConasetComponent } from './estadisticas-conaset/estadisticas-conaset.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { NgIf } from '@angular/common';
     MapaHistoricoComponent,
     HomeComponent,
     CuestionarioComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    EstadisticasConasetComponent
   ],
   entryComponents: [
     ConfirmComponent
