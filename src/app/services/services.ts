@@ -71,4 +71,9 @@ export class Servicios {
         });
 
     }
+
+    getAccidentesRegion(){
+        return this.http.get('https://serene-ocean-37939.herokuapp.com/datosConasetRegion.php')
+            .map((res: Response) => res.json());
+    }
 }

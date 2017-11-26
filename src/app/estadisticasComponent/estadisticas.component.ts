@@ -166,7 +166,7 @@ export class EstadisticasComponent implements OnInit{
 		
 		for(let i = 0; i< accidentes.length; i++){
 
-			console.log(accidentes[i]['mes'] + ' - ' + this.accidentes[i]['cantidadMes']);
+			// console.log(accidentes[i]['mes'] + ' - ' + this.accidentes[i]['cantidadMes']);
 
 			// si ya se acabron los accidentes en un año se sigue con el siguiente año
 			if (anio !== accidentes[i]['ano']){
