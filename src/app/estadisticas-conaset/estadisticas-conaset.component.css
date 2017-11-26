@@ -1,0 +1,35 @@
+h2{
+	font-family: 'Droid Serif', serif;
+	font-weight: bold;
+	margin-left: 100px;
+}
+
+label{
+	font-family: 'Droid Serif', serif;
+	font-size: 1.5em;
+}
+
+.example-margin{
+	margin-top: 50px;
+	margin-left: 100px;
+	
+}
+
+#sidenav{
+	margin-top: 6em;
+}
+/*
+.form-group{
+	padding-left: 20%;
+}
+.form-group > form > label{
+	margin-right: 2em;
+}
+*/
+
+
+.container{
+	margin-top: -20px; 
+	margin-bottom: 5px; 
+	width: 100%;
+}
