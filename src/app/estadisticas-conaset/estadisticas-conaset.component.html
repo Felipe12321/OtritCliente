@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" id="sidenav">
+            <form>
+                <label>seleccionar gráfico</label>
+                <mat-form-field>
+                    <mat-select placeholder="Gráfico" [(ngModel)]="selectedValue" name="graficos">
+
+                        <mat-option *ngFor="let grafico of graficos" [value]="grafico.value">
+                            {{ grafico.viewValue }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+        </div>
+        <div id="accordion" class="panel-group">
+
+            <div class="col-md-9">
+                <h2>Estadísticas</h2>
+            </div>
+        </div>        
+    </div>
+</div>

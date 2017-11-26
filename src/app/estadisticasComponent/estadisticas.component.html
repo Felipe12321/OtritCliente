@@ -1,12 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3" id="sidenav">
-<button class="btn btn-success" (click)="descargaDatos()">Descarga Datos</button>
-<hr>
+      <button class="btn btn-success" (click)="descargaDatos()">Descarga Datos</button>
+      <hr><hr>
+      <div class="form-group">
+
+        <form>
+          <label>seleccionar gráfico</label>
+          <mat-form-field>
+            <mat-select placeholder="Gráfico" [(ngModel)]="selectedValue" name="graficos">
+
+              <mat-option *ngFor="let grafico of graficos" [value]="grafico.value">
+                {{ grafico.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
       <div id="accordion" class="panel-group">
-        
+
+        <hr><hr>
+
+              
 <!--Grafico Anual-->
-        <div class="panel panel-primary" *ngIf="selectedValue == 'Anual' && isDataAvailableAnual">
+        <div class="panel panel-primary" 
+        *ngIf="selectedValue == 'Anual' && isDataAvailableAnual">
           <div class="panel-heading">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 
@@ -28,7 +46,8 @@
 <!--Grafico Mensual-->        
         
         
-        <div class="panel panel-primary" *ngIf="selectedValue == 'Mensual'">
+        <div class="panel panel-primary" 
+        *ngIf="selectedValue == 'Mensual' && isDataAvailableAnual">
           <div class="panel-heading">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> 
@@ -49,26 +68,8 @@
     </div>
     
     <div class="col-md-9">
-      <h2>Estadísticas</h2> 
-      <div class="form-group">
-      
-        <form>
-          <label>seleccionar gráfico</label>
-          <mat-form-field>      
-            <mat-select 
-              placeholder="Gráfico" 
-              [(ngModel)]="selectedValue" 
-              name="graficos">
-              
-              <mat-option 
-                *ngFor="let grafico of graficos" 
-                [value]="grafico.value">
-                {{ grafico.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </form>
-      </div>
+      <h2>Estadísticas Conaset</h2> 
+
 
 <!--Gráfico anual-->
 

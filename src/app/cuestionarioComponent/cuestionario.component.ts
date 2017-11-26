@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
 import { Servicios } from '../services/services';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-cuestionario-component',
@@ -10,14 +11,18 @@ import { Servicios } from '../services/services';
 })
 
 
-export class CuestionarioComponent {
+export class CuestionarioComponent implements OnInit{
     public textValue1: string;
     public textValue2: string;
 
-    constructor(private servicio: Servicios, private dialogService: DialogService) {
+    constructor(private servicio: Servicios, private dialogService: DialogService,
+    private titleService: Title) {
         
     }
 
+    ngOnInit(){
+        this.titleService.setTitle('Encuesta - OTRIT');
+    }
 
     onSubmit(f: NgForm){
         let disposable = this.dialogService.addDialog(ConfirmComponent, {
