@@ -76,4 +76,8 @@ export class Servicios {
         return this.http.get('https://serene-ocean-37939.herokuapp.com/datosConasetRegion.php')
             .map((res: Response) => res.json());
     }
+    getAccidentesAnualConaset(){
+        return this.http.get('https://serene-ocean-37939.herokuapp.com/datosConasetAnual.php')
+            .map((res: Response) => res.json());
+    }
 }
