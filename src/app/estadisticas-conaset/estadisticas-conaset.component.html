@@ -1,23 +1,41 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-3" id="sidenav">
-            <form>
-                <label>seleccionar gráfico</label>
-                <mat-form-field>
-                    <mat-select placeholder="Gráfico" [(ngModel)]="selectedValue" name="graficos">
-
-                        <mat-option *ngFor="let grafico of graficos" [value]="grafico.value">
-                            {{ grafico.viewValue }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </form>
-        </div>
-        <div id="accordion" class="panel-group">
-
-            <div class="col-md-9">
-                <h2>Estadísticas</h2>
-            </div>
-        </div>        
+  <div class="row">
+    <div class="col-md-3" id="sidenav">
+      <form>
+        <label>seleccionar gráfico</label>
+        <mat-form-field>
+          <mat-select placeholder="Gráfico" [(ngModel)]="selectedValue" name="graficos">
+            <mat-option *ngFor="let grafico of graficos" [value]="grafico.viewValue">
+              {{ grafico.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
     </div>
+    <div id="accordion" class="panel-group">
+
+    	<div class="col-md-8">
+        <h2>Estadísticas Conaset</h2>
+        <mat-card *ngIf="selectedValue == 'Regional'">
+					<mat-card-content>
+						<canvas *ngIf="isDataAvailableReg" 
+						baseChart [datasets]="barChartDataReg" 
+						[labels]="barChartLabelsReg" 
+						[options]="barChartOptionsReg"
+						[legend]="barChartLegendReg" 
+						[chartType]="barChartTypeReg" >
+						</canvas>
+						
+						<div *ngIf="!isDataAvailableReg">
+						
+							<h2 class="example-h2">Cargando...</h2>
+						
+							<mat-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
+							</mat-spinner>
+						</div>
+						</mat-card-content>
+				</mat-card>
+			</div>
+		</div>            
+  </div>        
 </div>

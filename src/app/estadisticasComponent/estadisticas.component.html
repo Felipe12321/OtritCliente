@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-3" id="sidenav">
       <button class="btn btn-success" (click)="descargaDatos()">Descarga Datos</button>
-      <hr><hr>
+      <hr>
       <div class="form-group">
 
         <form>
@@ -17,57 +17,14 @@
           </mat-form-field>
         </form>
       </div>
-      <div id="accordion" class="panel-group">
 
-        <hr><hr>
-
-              
-<!--Grafico Anual-->
-        <div class="panel panel-primary" 
-        *ngIf="selectedValue == 'Anual' && isDataAvailableAnual">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 
-                <span class="glyphicon glyphicon-chevron-down"></span>
-                Panel</a>
-            </h4>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse">
-            <div class="panel-body">
-              
-                Panel
-              
-            </div>
-          </div>
-        </div>
-
-
-
-<!--Grafico Mensual-->        
-        
-        
-        <div class="panel panel-primary" 
-        *ngIf="selectedValue == 'Mensual' && isDataAvailableAnual">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> 
-                <span class="glyphicon glyphicon-chevron-down"></span>
-                Panel
-              </a>
-            </h4>
-          </div>
-          <div id="collapseTwo" class="panel-collapse collapse" >
-            Panel
-          </div>
-        </div>
-      </div>
 
 
 
       
     </div>
     
-    <div class="col-md-9">
+    <div class="col-md-8">
       <h2>Estadísticas Conaset</h2> 
 
 

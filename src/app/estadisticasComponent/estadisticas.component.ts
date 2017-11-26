@@ -15,7 +15,6 @@ import { Observable } from 'rxjs/Observable';
 
 export class EstadisticasComponent implements OnInit{
 	
-	
 	private isDataAvailableMensual: boolean = false;
 	private isDataAvailableAnual: boolean = false;
 	
@@ -40,7 +39,6 @@ export class EstadisticasComponent implements OnInit{
 		 { 
 			 data: [], 
 			 label: 'Número de accidentes de tránsito', 
-			 
 			},
 		];
 	// variable que va a determinar los años
