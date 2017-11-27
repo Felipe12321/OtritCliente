@@ -53,7 +53,7 @@ export class MapaConasetComponent implements OnInit{
 
 
 			
-		  this.zoom = 11;
+		  this.zoom = 8;
 		  this.searchControl = new FormControl();
   
 		  this.mapsAPILoader.load().then(() => {
