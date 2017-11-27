@@ -13,7 +13,6 @@
             <mat-card>
                 <mat-card-content>
                     <agm-map 
-                    *ngIf="isDataAviable"
                         [latitude]="lat" 
                         [longitude]="lng" 
                         [zoom]="zoom" 
@@ -26,19 +25,11 @@
                             [iconUrl]="'assets/traficon.png'"
                             (markerClick)="infoWindow">
                             <agm-info-window #infoWindow>
-                                <strong>{{acc.fecha}}</strong>
+                                <strong>{{acc.calle}}<br/>
+                                        {{acc.hora}}</strong>
                             </agm-info-window>
                         </agm-marker>
                     </agm-map>
-
-                    <div *ngIf="!isDataAviable">
-                    
-                        <h2 class="example-h2">Cargando...</h2>
-                    
-                        <mat-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
-                        </mat-spinner>
-                    </div>
-
                 </mat-card-content>
             </mat-card>
         </div>
