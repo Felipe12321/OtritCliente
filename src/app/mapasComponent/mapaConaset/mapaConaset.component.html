@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="autocomplete">Buscar sector</label>
+                <input id="autocomplete" placeholder="Ingresa una dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+                <br> <br>
+    
+                 </div>
+            </div>
+        <div class="col-md-9">
+            <h2>Mapa conaset</h2>
+            <mat-card>
+                <mat-card-content>
+                    <agm-map 
+                        [latitude]="lat" 
+                        [longitude]="lng" 
+                        [zoom]="zoom" 
+                        [minZoom]="5"
+                        [streetViewControl]="false">
+                        <div *ngFor="let acc of accidentes; let i = index">
+                            <agm-circle *ngIf="acc.anio == '2015'"
+                            [latitude]="acc.latitud"
+                            [longitude]="acc.longitud"
+                            [radius]="acc.siniestros*2"
+                            [fillColor]="'#FF0000'">
+                            </agm-circle>
+
+                            <agm-circle *ngIf="acc.anio == '2014'"
+                            [latitude]="acc.latitud"
+                            [longitude]="acc.longitud"
+                            [radius]="acc.siniestros*2"
+                            [fillColor]="'#191970'">
+                            </agm-circle>
+
+                            <agm-circle *ngIf="acc.anio == '2016'"
+                            [latitude]="acc.latitud"
+                            [longitude]="acc.longitud"
+                            [radius]="acc.siniestros*2"
+                            [fillColor]="'#FFD700'">
+                            </agm-circle>
+                        </div>
+
+                                
+                    </agm-map>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
