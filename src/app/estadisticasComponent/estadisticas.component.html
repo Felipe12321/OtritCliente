@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3" id="sidenav">
-      <button class="btn btn-success" (click)="descargaDatos()">Descarga Datos</button>
+      <button class="btn btn-success btn-block" (click)="descargaDatos()">Descarga datos de Twitter</button>
       <hr>
       <div class="form-group">
 
         <form>
-          <label>Seleccionar gráfico</label>
+          <label>Seleccionar gráfico</label><br>
           <mat-form-field>
             <mat-select placeholder="Gráfico" [(ngModel)]="selectedValue" name="graficos">
 
@@ -17,11 +17,6 @@
           </mat-form-field>
         </form>
       </div>
-
-
-
-
-      
     </div>
     
     <div class="col-md-9">
@@ -38,8 +33,8 @@
             [datasets]="barChartDataAnual"
             [labels]="barChartLabelsAnual"
             [options]="barChartOptionsAnual"
-            [legend]="barChartLegendAnual"
-            [chartType]="barChartTypeAnual"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
             [colors]="Colors">
           </canvas>
 
@@ -61,8 +56,8 @@
             [datasets]="barChartDataMensual"
             [labels]="barChartLabelsMensual"
             [options]="barChartOptionsMensual"
-            [legend]="barChartLegendMensual"
-            [chartType]="barChartTypeMensual">
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
           </canvas>
       
       
@@ -71,6 +66,47 @@
           
             <h2 class="example-h2">Cargando...</h2>
         
+            <mat-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
+            </mat-spinner>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card *ngIf="selectedValue == 'Comuna'">
+        <mat-card-content>
+          <div *ngIf="isDataAvailableAnual">
+            <canvas  
+           
+              baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType">
+            </canvas>
+
+            <table>
+              <tr>
+                <th>Accidentes Totales.</th><th></th>
+              </tr>
+            
+              
+                <tr *ngFor="let acc of accidentesComuna; let i = index">
+                  <td *ngIf= "acc.cantidad == 1">
+                    {{i+1}}.- {{acc.comuna}}</td> 
+                  <td *ngIf= "acc.cantidad == 1">
+                    <b>{{acc.cantidad}}</b> accidente</td>
+                  
+                  <td *ngIf= "acc.cantidad > 1">
+                    {{i+1}}.- {{acc.comuna}} </td> 
+                  <td *ngIf= "acc.cantidad > 1"> 
+                    <b>{{acc.cantidad}}</b> accidentes</td>
+                </tr>
+              
+            </table>
+          </div>
+          <div *ngIf="!isDataAvailableAnual">
+      
+            <h2 class="example-h2">Cargando...</h2>
+      
             <mat-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
             </mat-spinner>
           </div>

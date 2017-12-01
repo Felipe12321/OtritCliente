@@ -17,12 +17,12 @@ export class EstadisticasComponent implements OnInit{
 	
 	private isDataAvailableMensual: boolean = false;
 	private isDataAvailableAnual: boolean = false;
-	
-	private accidentes: Array<Observable<Object>>;
+
 	
 	private selectedValue= 'Anual';
 	private graficos = [{ value: 'Anual', viewValue: 'Anual' },
-	{ value: 'Mensual', viewValue: 'Mensual' }];
+	{ value: 'Mensual', viewValue: 'Mensual' },
+	{ value: 'Comuna', viewValue: 'Comuna'}];
 	
 	public barChartOptionsAnual: any = {
 		scaleShowVerticalLines: true,
@@ -32,8 +32,8 @@ export class EstadisticasComponent implements OnInit{
 	
 
 	public barChartLabelsAnual: 	string[] = [];
-	public barChartTypeAnual:		string = 'bar';
-	public barChartLegendAnual: 	boolean = true;
+	public barChartType:		string = 'bar';
+	public barChartLegend: 	boolean = true;
 	 
 	public barChartDataAnual:any[] = [
 		 { 
@@ -62,11 +62,14 @@ export class EstadisticasComponent implements OnInit{
 	public barChartLabelsMensual: string[] = ['Enero','Febrero','Marzo','Abril','Mayo'
 											 ,'Junio','Julio','Agosto','Septiembre'
 											 ,'Octubre','Noviembre','Diciembre'];
-
-	public barChartTypeMensual: string = 'bar';
-	public barChartLegendMensual: boolean = true;
 	public barChartDataMensual: Array<any> = [{data:[0,0,0,0,0,0,0,0,0,0,0,0], label: '' }];
-	 
+	
+	
+	public doughnutChartType:string = 'doughnut';
+	public doughnutChartLabels:string[] = [];
+	public doughnutChartData:number[] = [];
+	private accidentesComuna;
+
 	constructor(
 	  private router: Router,
 	  private aR: ActivatedRoute,
@@ -82,14 +85,15 @@ export class EstadisticasComponent implements OnInit{
 		this.updateGraficoAnual();
 // datos mensuales
 		this.updateGraficoMensual();
-		
+// datos por comuna
+		this.updateGraficoComuna();
 	}
 
 
 	private updateGraficoAnual() {
 		this.servicio.getAccidentesEstadisticasAnio().subscribe(accidentes => {
-			this.accidentes = accidentes;
-			this.editarGraficoAnual(this.accidentes);
+			accidentes = accidentes;
+			this.editarGraficoAnual(accidentes);
 		});
 
 		// this.editarLabel();
@@ -97,65 +101,42 @@ export class EstadisticasComponent implements OnInit{
 
 	private updateGraficoMensual(){
 		this.servicio.getAccidentesEstadisticasMes().subscribe(accidentes => {
-			this.accidentes = accidentes;
-			this.editarGraficoMensual(this.accidentes);
+			accidentes = accidentes;
+			this.editarGraficoMensual(accidentes);
 		});
 	}
 
-/*
-	private editarLabel(){
-		console.log(this.ene);
-
-		let meses = [];
-		if (this.ene){
-			meses.push('Enero');	
-		}
-		if (this.feb) {
-			meses.push('Febrero');
-		}
-		if (this.mar) {
-			meses.push('Marzo');
-		}
-		if (this.abr) {
-			meses.push('Abril');
-		}
-		if (this.may) {
-			meses.push('Mayo');
-		}
-		if (this.jun) {
-			meses.push('Junio');
-		}
-		if (this.jul) {
-			meses.push('Julio');
-		}
-		if (this.ago){
-			meses.push('Agosto');
-		}
-		if (this.sep) {
-			meses.push('Septiembre');
-		}
-		if (this.oct) {
-			meses.push('Octubre');
-		}
-		if (this.nov) {
-			meses.push('Noviembre');
-		}
-		if (this.dic) {
-			meses.push('Diciembre');
-		}
-	
-		this.barChartLabelsMensual = meses;
+	private updateGraficoComuna(){
+		this.servicio.getAccidentesComuna().subscribe(accidentes => {
+			accidentes = accidentes;
+			
+			this.editarGraficoComuna(accidentes);
+		});
 	}
-*/
 
 
-	
-	editarGraficoMensual(accidentes: Array<Observable<Object>>){
 
-		console.log(accidentes);
+
+
+
+
+	private editarGraficoComuna(accidentes: Array<Observable<Object>>){
+		this.accidentesComuna = accidentes;
+		
+		for (let i=0; i < accidentes.length; i++){
+			if (i < 10){
+				this.doughnutChartData.push(accidentes[i]['cantidad']);
+				this.doughnutChartLabels.push(accidentes[i]['comuna']);
+			}
+		}
+	}
+		
+	private editarGraficoMensual(accidentes: Array<Observable<Object>>){
+
+		
 
 		// se guarda el primer accidente del arreglo
-		let anio = this.accidentes[0]['ano'];
+		let anio = accidentes[0]['ano'];
 		// Contador de años
 		let indiceAnio = 0;
 		
@@ -176,7 +157,7 @@ export class EstadisticasComponent implements OnInit{
 				this.barChartDataMensual[indiceAnio]['label'] = 'Cantidad accidentes año ' + accidentes[i]['ano'];
 			}			
 
-			this.barChartDataMensual[indiceAnio]['data'][+accidentes[i]['mes']-1] = (+ this.accidentes[i]['cantidadMes']);
+			this.barChartDataMensual[indiceAnio]['data'][+accidentes[i]['mes']-1] = (+ accidentes[i]['cantidadMes']);
 			
 		}
 
@@ -185,13 +166,13 @@ export class EstadisticasComponent implements OnInit{
 
 	
 
-	editarGraficoAnual(accidentes: Array<Observable<Object>>){
+	private editarGraficoAnual(accidentes: Array<Observable<Object>>){
 		let cantAccidentes: number	[] = [];
 		let labelAccidentes: string	[] = [];
 
 		for (let i = 0; i< accidentes.length; i++){
-			cantAccidentes.push(+ this.accidentes[i]['cantidadAno']);
-			labelAccidentes.push(this.accidentes[i]['ano']);
+			cantAccidentes.push(+ accidentes[i]['cantidadAno']);
+			labelAccidentes.push(accidentes[i]['ano']);
 
 			this.graficoDataAnual[i] = true;
 		}
