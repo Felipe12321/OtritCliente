@@ -46,6 +46,11 @@ export class Servicios {
             .map((res: Response) => res.json());
     }
 
+    public getAccidentesComuna(): Observable<any>{
+        return this.http.get('https://serene-ocean-37939.herokuapp.com/getAccidentesComuna.php')
+        .map((res: Response) => res.json());
+    }
+
     public getAccidentesEstadisticasAnio(): Observable<any>{
         return this.http.get('https://serene-ocean-37939.herokuapp.com/getAccidentesEstadistAnual.php')
         .map((res: Response) => res.json());
