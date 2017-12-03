@@ -5,9 +5,20 @@
                 <label for="autocomplete">Buscar sector</label>
                 <input id="autocomplete" placeholder="Ingresa una dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
                 <br> <br>
-    
-                 </div>
+                <form>
+                        <label>Seleccionar Fecha</label><br>
+                        <mat-form-field>
+                            <mat-select placeholder="Fecha" [(ngModel)]="selectedValue" name="fechas">
+                
+                            <mat-option *ngFor="let fecha of fechas" [value]="fecha.value">
+                                {{ fecha.viewValue }}
+                            </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                </form>
+                </div>
             </div>
+
         <div class="col-md-9">
             <h2>Mapa conaset</h2>
             <mat-card>
@@ -19,26 +30,54 @@
                         [minZoom]="5"
                         [streetViewControl]="false">
                         <div *ngFor="let acc of accidentes; let i = index">
-                            <agm-circle *ngIf="acc.anio == '2015'"
-                            [latitude]="acc.latitud"
-                            [longitude]="acc.longitud"
-                            [radius]="acc.siniestros*2"
-                            [fillColor]="'#FF0000'">
+                            <agm-circle *ngIf="acc.anio == '2015' && selectedValue == '2015'"
+                                [latitude]="acc.latitud"
+                                [longitude]="acc.longitud"
+                                [radius]="acc.siniestros*2"
+                                [fillColor]="'#FF0000'">
+                                <agm-marker 
+                                    [latitude]="acc.latitud"
+                                    [longitude]="acc.longitud"
+                                    [iconUrl]="'assets/marker/pin.png'"
+                                    (markerClick)="infoWindow">
+                                    <agm-info-window #infoWindow>
+                                        <strong>{{acc.siniestros}}</strong>
+                                    </agm-info-window>
+                                </agm-marker>
                             </agm-circle>
 
-                            <agm-circle *ngIf="acc.anio == '2014'"
-                            [latitude]="acc.latitud"
-                            [longitude]="acc.longitud"
-                            [radius]="acc.siniestros*2"
-                            [fillColor]="'#191970'">
+                            <agm-circle *ngIf="acc.anio == '2014' && selectedValue == '2014'"
+                                [latitude]="acc.latitud"
+                                [longitude]="acc.longitud"
+                                [radius]="acc.siniestros*2"
+                                [fillColor]="'#191970'">
+                                <agm-marker 
+                                    [latitude]="acc.latitud"
+                                    [longitude]="acc.longitud"
+                                    [iconUrl]="'assets/marker/pin.png'"
+                                    (markerClick)="infoWindow">
+                                    <agm-info-window #infoWindow>
+                                        <strong>{{acc.siniestros}}</strong>
+                                    </agm-info-window>
+                                </agm-marker>
                             </agm-circle>
 
-                            <agm-circle *ngIf="acc.anio == '2016'"
-                            [latitude]="acc.latitud"
-                            [longitude]="acc.longitud"
-                            [radius]="acc.siniestros*2"
-                            [fillColor]="'#FFD700'">
+                            <agm-circle *ngIf="acc.anio == '2016' && selectedValue == '2016'"
+                                [latitude]="acc.latitud"
+                                [longitude]="acc.longitud"
+                                [radius]="acc.siniestros*2"
+                                [fillColor]="'#FFD700'">
+                                <agm-marker
+                                    [latitude]="acc.latitud"
+                                    [longitude]="acc.longitud"
+                                    [iconUrl]="'assets/marker/pin.png'"
+                                    (markerClick)="infoWindow">
+                                    <agm-info-window #infoWindow>
+                                        <strong>{{acc.siniestros}}</strong>
+                                    </agm-info-window>
+                                </agm-marker>
                             </agm-circle>
+                            
                         </div>
 
                                 
