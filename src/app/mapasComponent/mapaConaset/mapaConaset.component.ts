@@ -23,7 +23,12 @@ export class MapaConasetComponent implements OnInit{
 	public searchControl: FormControl;
 	public zoom: number;
 	private accidentes: Accidente[] = [];
-  
+	
+	private selectedValue= '';
+	private fechas = [{ value: '2014', viewValue: '2014' },
+	{ value: '2015', viewValue: '2015' },
+	{ value: '2016', viewValue: '2016'}];
+
 	@ViewChild('search')
 	public searchElementRef: ElementRef;
   
