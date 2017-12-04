@@ -1,12 +1,9 @@
-h1{
-    font-family: 'Chelsea Market';
-    font-size: 4em;
-    color: gray;
-    margin-bottom: 1em;
+h1,h2,h5{
+    font-family: 'Spectral SC', serif;
 }
-h2{
-    margin-top: 2em;
-    margin-bottom: 2em;
+h1{
+    font-size: 4em;
+    margin-bottom: 1em; 
 }
 
 .hrup{
@@ -19,3 +16,7 @@ h2{
      content: "\00a0";
 }
 
+.container{
+    text-align: center; 
+    
+}

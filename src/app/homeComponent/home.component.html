@@ -1,21 +1,27 @@
 
-<div class="container" style="text-align: center">	
+<div class="container" >	
 	<div class="row">
-		<div class="col-md-2">
-			<img style="float: left" src="http://queestudiarenchile.com/wp-content/uploads/2017/01/LOGO-UNAB.jpg" alt="" width="100">
+		<div class="col-md-1">
+				
+			<img style="float: left" src="assets/logo-unab.jpg" alt="" width="150">
 		</div>
 	
-		<div class="col-md-9 col-sm-10">
+		<div class="col-md-11 col-sm-10">
 			<h1>Estadisticas y datos de accidentes de tránsito</h1>
 		</div>
 	</div>	
 	<div class="row">
-		<hr class="hrup">
+		<!--<hr class="hrup">-->
 		<h2>Accede a nuestros sitios</h2>
+		<h5>Con datos obtenidos desde reportes de Twitter</h5>
+		<h5>o con datos obtenidos desde Comision Nacional de Seguridad de Tránsito (Conaset)</h5>
 		<div class="col-md-4" id="grafico">
 			<button [routerLink]="['estadisticas']"
 			type="button" 
-			class="btn btn-primary btn-lg btn-block">Gráficos</button>						
+			class="btn btn-primary btn-lg btn-block">Gráficos de Twitter</button>		
+			<button [routerLink]="['estadisticasConaset']"
+			type="button" 
+			class="btn btn-danger btn-lg btn-block">Gráficos de Conaset</button>						
 		</div>
 
 		
@@ -25,8 +31,12 @@
 				[routerLink]="['/mapaTiempoReal']" 
 				type="button" 
 				class="btn btn-primary btn-lg btn-block">Mapa en tiempo real</button>
+
+			
 		
 		</div>
+		
+		
 		<div class="col-md-4">
 				
 					
@@ -34,6 +44,11 @@
 				 [routerLink]="['/mapaHistorico']" 
 				 type="button" 
 				 class="btn btn-primary btn-lg btn-block">Mapa con datos históricos</button>
+
+			<button
+				 [routerLink]="['/mapaConaset']" 
+				 type="button" 
+				 class="btn btn-danger btn-lg btn-block">Mapa Conaset</button>
 				
 		</div>
 		

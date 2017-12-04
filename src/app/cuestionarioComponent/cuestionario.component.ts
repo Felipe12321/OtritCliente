@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, AbstractControl  } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
 import { Servicios } from '../services/services';
 import { Title } from '@angular/platform-browser';
@@ -12,12 +13,25 @@ import { Title } from '@angular/platform-browser';
 
 
 export class CuestionarioComponent implements OnInit{
+    private respuesta: boolean = false;
     public textValue1: string;
     public textValue2: string;
 
-    constructor(private servicio: Servicios, private dialogService: DialogService,
-    private titleService: Title) {
+
+
+    private passAceptada: boolean = false;
+    private error: boolean = false;
+    private form: FormGroup;
+
+
+    constructor(
+        private servicio: Servicios, private dialogService: DialogService,
+        private titleService: Title, private fb: FormBuilder) {
         
+            this.form = this.fb.group({
+                
+                password:['',Validators.required]
+            });
     }
 
     ngOnInit(){
@@ -26,20 +40,29 @@ export class CuestionarioComponent implements OnInit{
 
     onSubmit(f: NgForm){
         let disposable = this.dialogService.addDialog(ConfirmComponent, {
-            title: 'Confirm title',
-            message: 'Confirm message'
+            title: 'FINALIZAR ENCUESTA',
+            message: '¿Estas seguro de terminar la encuesta?'
         })
             .subscribe((isConfirmed) => {
                 // We get dialog result
                 if (isConfirmed) {
-                    let res = this.servicio.sedData(f.value);
+                    let res = this.servicio.sendData(f.value);
                     console.log(res);
                     alert('Se ha guardado correctamente la encuesta. ');
-                    window.location.reload();
+                    this.respuesta = true;
                 } else {
                     alert('No se ha guardado la encuesta. ');
                 }
         });
+    }
+
+    onSubmitPass(form: any) {
+        if (form['password'] != 'otrit123'){
+            this.error = true;
+        }else{
+            this.passAceptada = true;
+            this.error = false;
+        }
     }
 
 }
@@ -82,3 +105,4 @@ export class ConfirmComponent extends DialogComponent<ConfirmModel, boolean> imp
         this.close();
     }
 }
+

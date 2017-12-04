@@ -1,4 +1,27 @@
-<div class="container">
+<div class="container" *ngIf="!passAceptada">
+    <div class="alert alert-danger" *ngIf="error">Contraseña incorrecta</div>
+        <form [formGroup]="form" (ngSubmit)="onSubmitPass(form.value)">
+
+        <div class="form-group">
+            <label for="password">Ingresar contraseña</label>
+            <input type="password" 
+            id="password" 
+            class="form-control"  
+            formControlName="password"
+            [formGroup]="form">    
+        </div>
+        <input type="submit" class="btn btn-primary" value="Aceptar" >
+    </form>
+
+</div>
+
+
+
+<div *ngIf="passAceptada">
+<div class="container" *ngIf="respuesta">
+    <h1>Gracias por responder nuestra encuesta!.</h1>
+</div>
+<div class="container" *ngIf ="!respuesta">
     <div class="row">
         <div class="col-md-12">
             <h2>Encuesta</h2>
@@ -564,3 +587,4 @@
 
 
 
+</div>
