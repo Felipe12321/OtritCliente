@@ -61,7 +61,7 @@ export class Servicios {
     }
 
 
-    public sedData(values: Array<any>){
+    public sendData(values: Array<any>){
 
         console.log(JSON.stringify(values));
         let headers = new Headers();

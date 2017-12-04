@@ -12,28 +12,7 @@
 					
 				</form>
 
-				<div id="accordion" class="panel-group" *ngIf="isDataAviable">
-				
-					<!--Grafico Anual-->
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-									<span class="glyphicon glyphicon-chevron-down"></span>
-									Seleccionar año</a>
-							</h4>
-						</div>
-						<div id="collapseOne" class="panel-collapse collapse">
-							<div class="panel-body">
-								<div *ngFor="let year of years; let i = index">
-									<mat-checkbox [(ngModel)]="isEnabled[i]"
-												 (change)="change(year,i)"
-									>{{year}}</mat-checkbox>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
 			</div>
 		</div>
 		<div class="col-md-9">
