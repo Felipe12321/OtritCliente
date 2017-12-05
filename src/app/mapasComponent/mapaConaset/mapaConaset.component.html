@@ -41,7 +41,8 @@
                                     [iconUrl]="'assets/marker/pin.png'"
                                     (markerClick)="infoWindow">
                                     <agm-info-window #infoWindow>
-                                        <strong>{{acc.siniestros}}</strong>
+                                        <strong>Región: {{acc.region}}<br/>
+                                                Cantidad de siniestros: {{acc.siniestros}}</strong>
                                     </agm-info-window>
                                 </agm-marker>
                             </agm-circle>
@@ -57,7 +58,8 @@
                                     [iconUrl]="'assets/marker/pin.png'"
                                     (markerClick)="infoWindow">
                                     <agm-info-window #infoWindow>
-                                        <strong>{{acc.siniestros}}</strong>
+                                        <strong>Región: {{acc.region}}<br/>
+                                                Cantidad de siniestros: {{acc.siniestros}}</strong>
                                     </agm-info-window>
                                 </agm-marker>
                             </agm-circle>
@@ -73,14 +75,14 @@
                                     [iconUrl]="'assets/marker/pin.png'"
                                     (markerClick)="infoWindow">
                                     <agm-info-window #infoWindow>
-                                        <strong>{{acc.siniestros}}</strong>
+                                        <strong>Región: {{acc.region}}<br/>
+                                                Cantidad de siniestros: {{acc.siniestros}}</strong>
                                     </agm-info-window>
                                 </agm-marker>
                             </agm-circle>
                             
                         </div>
-
-                                
+                               
                     </agm-map>
                 </mat-card-content>
             </mat-card>
